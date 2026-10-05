@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metas | Horizonte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#F2F5F6', ink: '#13242C', mut: '#5B6E77', line: '#D6DFE3', sea: '#1D5B78', 'sea-dark': '#133F55', seas: '#E4EFF4', sun: '#F0A33B', suns: '#FDF1DC' },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Bricolage Grotesque', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-paper font-sans text-ink min-h-screen flex flex-col">
+  <header class="flex items-center gap-12 px-14 h-[76px] bg-white border-b border-line sticky top-0 z-40">
+    <a href="index.html" class="inline-flex items-center gap-2.5 no-underline">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
+      <span class="font-display text-[22px] font-bold tracking-tight">Horizonte</span>
+    </a>
+    <nav class="flex gap-1.5 flex-1">
+      <a href="dashboard.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Dashboard</a>
+      <a href="simulador.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Simulador</a>
+      <a href="metas.html" class="px-3.5 pt-6 pb-5 text-base font-bold text-ink border-b-[3px] border-sun">Metas</a>
+    </nav>
+    <div class="flex items-center gap-2.5 text-base">
+      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">M</span>
+      <span>Marina</span>
+      <a href="index.html" class="text-sea font-bold text-sm ml-4 underline underline-offset-2">Sair</a>
+    </div>
+  </header>
+
+  <main class="p-14 max-w-[1440px] mx-auto w-full flex-1 flex flex-col gap-6">
+    <div class="flex justify-between items-end">
+      <div>
+        <h1 class="font-display text-[40px] tracking-[-0.02em]">Metas</h1>
+        <p class="text-mut text-[17px] mt-1">Marcos no caminho até R$ 1,14 mi e as metas que você criar.</p>
+      </div>
+      <a href="#" class="bg-sea-dark text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-sea transition-colors">Nova meta</a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6 items-start">
+      <div class="flex flex-col gap-6">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut">Marcos do plano · data estimada</p>
+        <div class="bg-white border border-line rounded-xl overflow-hidden flex flex-col">
+          <div class="p-6 border-b border-line flex flex-col gap-2">
+            <div class="flex justify-between items-center font-bold text-lg"><span>Reserva de emergência</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">abr/2027</span></div>
+            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:53.3%"></div></div>
+            <div class="flex justify-between text-sm text-mut"><span>R$ 8.000 de R$ 15.000</span><span>53% concluído</span></div>
+          </div>
+          <div class="p-6 border-b border-line flex flex-col gap-2">
+            <div class="flex justify-between items-center font-bold text-lg"><span>Primeiros R$ 50 mil</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">jun/2029</span></div>
+            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:16%"></div></div>
+            <div class="flex justify-between text-sm text-mut"><span>R$ 8.000 de R$ 50.000</span><span>16% concluído</span></div>
+          </div>
+          <div class="p-6 border-b border-line flex flex-col gap-2">
+            <div class="flex justify-between items-center font-bold text-lg"><span>R$ 250 mil</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">set/2038</span></div>
+            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:3.2%"></div></div>
+            <div class="flex justify-between text-sm text-mut"><span>R$ 8.000 de R$ 250.000</span><span>3% concluído</span></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <div class="flex justify-between items-center font-bold text-lg"><span>Independência financeira</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">dez/2057</span></div>
+            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:2%"></div></div>
+            <div class="flex justify-between text-sm text-mut"><span>R$ 8.000 de R$ 1.140.000</span><span>1% concluído</span></div>
+          </div>
+        </div>
+
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut mt-2">Minhas metas · data desejada</p>
+        <div class="bg-white border border-line rounded-xl overflow-hidden flex flex-col">
+          <div class="p-6 flex flex-col gap-2">
+            <div class="flex justify-between items-center font-bold text-lg"><span>Intercâmbio</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">até dez/2028</span></div>
+            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:7.5%"></div></div>
+            <div class="flex justify-between text-sm text-mut"><span>R$ 3.000 de R$ 40.000</span><span class="flex gap-4"><a href="#" class="text-sea font-bold underline">Editar</a><a href="#" class="text-red-600 font-bold underline">Excluir</a></span></div>
+            <div class="flex justify-between text-sm text-mut mt-1"><span>Guarde cerca de R$ 1.335 por mês, além do seu aporte</span><span>8% concluído</span></div>
+          </div>
+          <div class="m-6 border-[1.5px] dashed border-line rounded-lg p-3 text-center text-sea font-bold text-sm cursor-pointer hover:bg-seas transition-colors">+ Adicionar nova meta</div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+        <h3 class="font-display text-[17px] font-bold">Nova meta</h3>
+        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Nome</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">Intercâmbio</div></label>
+        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Valor</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 40.000</div></label>
+        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Data desejada</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">dez/2028</div></label>
+        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Quanto você já tem para essa meta</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 3.000</div><small class="text-mut font-normal text-xs">Começa em R$ 0 se você ainda não guardou nada para ela.</small></label>
+        <div class="bg-suns border-l-4 border-sun rounded-r-[10px] rounded-l-[4px] p-4 text-sm">Guarde cerca de <b>R$ 1.335 por mês</b>, além do seu aporte, para chegar a tempo.</div>
+        <a href="#" class="block bg-sea-dark text-white rounded-full py-3.5 text-center font-bold hover:bg-sea transition-colors">Salvar meta</a>
+      </div>
+    </div>
+  </main>
+  <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line mt-12">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
+</body>
+</html>

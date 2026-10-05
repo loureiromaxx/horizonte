@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Horizonte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#F2F5F6', ink: '#13242C', mut: '#5B6E77', line: '#D6DFE3', sea: '#1D5B78', 'sea-dark': '#133F55', seas: '#E4EFF4', sun: '#F0A33B', suns: '#FDF1DC' },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Bricolage Grotesque', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-paper font-sans text-ink min-h-screen flex flex-col">
+  <header class="flex items-center gap-12 px-14 h-[76px] bg-white border-b border-line sticky top-0 z-40">
+    <a href="index.html" class="inline-flex items-center gap-2.5 no-underline">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
+      <span class="font-display text-[22px] font-bold tracking-tight">Horizonte</span>
+    </a>
+    <nav class="flex gap-1.5 flex-1">
+      <a href="dashboard.html" class="px-3.5 pt-6 pb-5 text-base font-bold text-ink border-b-[3px] border-sun">Dashboard</a>
+      <a href="simulador.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Simulador</a>
+      <a href="metas.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Metas</a>
+    </nav>
+    <div class="flex items-center gap-2.5 text-base">
+      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">M</span>
+      <span>Marina</span>
+      <a href="index.html" class="text-sea font-bold text-sm ml-4 underline underline-offset-2">Sair</a>
+    </div>
+  </header>
+
+  <main class="p-14 max-w-[1440px] mx-auto w-full flex-1 flex flex-col gap-6">
+    <div class="flex justify-between items-end">
+      <div>
+        <h1 class="font-display text-[40px] tracking-[-0.02em]">Olá, Marina</h1>
+        <p class="text-mut text-[17px] mt-1">Você está a 31 anos da independência financeira.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 bg-white border border-line rounded-xl overflow-hidden my-2">
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Patrimônio atual</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 8.000</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Aporte mensal</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 1.200</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Meta de renda</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 5.000/mês</b></div>
+      <div class="p-6 flex flex-col"><span class="text-sm text-mut">Chegada prevista</span><b class="font-display text-[30px] tracking-[-0.02em]">dez/2057</b><small class="text-mut text-xs">aos 53 anos</small></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-6 items-start">
+      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-4">
+        <h3 class="font-display text-[17px] font-bold">Seu caminho até R$ 1,14 mi (valores de hoje)</h3>
+        <svg class="w-full h-auto" viewBox="0 0 760 340" width="760" height="340" xmlns="http://www.w3.org/2000/svg"><line x1="76" x2="730" y1="308.0" y2="308.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="312.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 0</text><line x1="76" x2="730" y1="210.7" y2="210.7" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="214.7" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1 mi</text><line x1="76" x2="730" y1="113.3" y2="113.3" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="117.3" text-anchor="end" font-size="11" fill="#5B6E77">R$ 2 mi</text><line x1="76" x2="730" y1="16.0" y2="16.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="20.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 3 mi</text><text x="76.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">Hoje</text><text x="148.7" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">5 anos</text><text x="221.3" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">10 anos</text><text x="294.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">15 anos</text><text x="366.7" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">20 anos</text><text x="439.3" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">25 anos</text><text x="512.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">30 anos</text><text x="584.7" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">35 anos</text><text x="657.3" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">40 anos</text><text x="730.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">45 anos</text><line x1="76" x2="730" y1="197.0" y2="197.0" stroke="#F0A33B" stroke-width="2" stroke-dasharray="7 5"/><text x="84" y="189.0" font-size="12" font-weight="700" fill="#B87410">Meta: R$ 1,14 mi</text><clipPath id="c5"><rect x="76" y="16" width="654" height="292"/></clipPath><g clip-path="url(#c5)"><path d="M 76.0 307.2 L 90.5 305.7 L 105.1 304.2 L 119.6 302.6 L 134.1 300.8 L 148.7 299.0 L 163.2 297.1 L 177.7 295.1 L 192.3 293.0 L 206.8 290.8 L 221.3 288.4 L 235.9 286.0 L 250.4 283.4 L 264.9 280.6 L 279.5 277.8 L 294.0 274.7 L 308.5 271.5 L 323.1 268.2 L 337.6 264.7 L 352.1 260.9 L 366.7 257.0 L 381.2 252.9 L 395.7 248.6 L 410.3 244.0 L 424.8 239.2 L 439.3 234.2 L 453.9 228.8 L 468.4 223.2 L 482.9 217.3 L 497.5 211.1 L 512.0 204.6 L 526.5 197.7 L 541.1 190.5 L 555.6 182.9 L 570.1 174.8 L 584.7 166.4 L 599.2 157.5 L 613.7 148.2 L 628.3 138.3 L 642.8 127.9 L 657.3 117.0 L 671.9 105.5 L 686.4 93.5 L 700.9 80.7 L 715.5 67.3 L 730.0 53.2 L 730.0 308.0 L 76.0 308.0 Z" fill="#1D5B78" fill-opacity="0.10"/><path d="M 76.0 307.2 L 90.5 305.7 L 105.1 304.2 L 119.6 302.6 L 134.1 300.8 L 148.7 299.0 L 163.2 297.1 L 177.7 295.1 L 192.3 293.0 L 206.8 290.8 L 221.3 288.4 L 235.9 286.0 L 250.4 283.4 L 264.9 280.6 L 279.5 277.8 L 294.0 274.7 L 308.5 271.5 L 323.1 268.2 L 337.6 264.7 L 352.1 260.9 L 366.7 257.0 L 381.2 252.9 L 395.7 248.6 L 410.3 244.0 L 424.8 239.2 L 439.3 234.2 L 453.9 228.8 L 468.4 223.2 L 482.9 217.3 L 497.5 211.1 L 512.0 204.6 L 526.5 197.7 L 541.1 190.5 L 555.6 182.9 L 570.1 174.8 L 584.7 166.4 L 599.2 157.5 L 613.7 148.2 L 628.3 138.3 L 642.8 127.9 L 657.3 117.0 L 671.9 105.5 L 686.4 93.5 L 700.9 80.7 L 715.5 67.3 L 730.0 53.2" fill="none" stroke="#1D5B78" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="529.0" cy="197.0" r="15" fill="#F0A33B" fill-opacity="0.25"/><circle cx="529.0" cy="197.0" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/></g></svg>
+        <a href="simulador.html" class="text-sea font-bold text-sm underline underline-offset-2">Abrir no simulador</a>
+      </div>
+      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+        <h3 class="font-display text-[17px] font-bold">Próximas metas</h3>
+        <div>
+          <div class="flex justify-between text-[15px]"><b>Reserva de emergência</b><span class="text-mut text-sm">R$ 8.000 de R$ 15.000</span></div>
+          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:53%"></div></div>
+          <small class="text-mut">Previsão: abr/2027</small>
+        </div>
+        <div>
+          <div class="flex justify-between text-[15px]"><b>Primeiros R$ 50 mil</b><span class="text-mut text-sm">R$ 8.000 de R$ 50.000</span></div>
+          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:16%"></div></div>
+          <small class="text-mut">Previsão: jun/2029</small>
+        </div>
+        <div>
+          <div class="flex justify-between text-[15px]"><b>R$ 250 mil</b><span class="text-mut text-sm">R$ 8.000 de R$ 250.000</span></div>
+          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:3%"></div></div>
+          <small class="text-mut">Previsão: set/2038</small>
+        </div>
+        <a href="metas.html" class="text-sea font-bold text-sm underline underline-offset-2">Ver todas as metas</a>
+      </div>
+    </div>
+  </main>
+  <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
+</body>
+</html>

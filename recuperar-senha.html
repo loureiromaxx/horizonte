@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recuperar Senha | Horizonte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#F2F5F6', ink: '#13242C', mut: '#5B6E77', line: '#D6DFE3', sea: '#1D5B78', 'sea-dark': '#133F55', seas: '#E4EFF4', sun: '#F0A33B', suns: '#FDF1DC' },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Bricolage Grotesque', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#DDE4E8] font-sans text-ink min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-[1440px] min-h-[760px] bg-paper rounded-md shadow-[0_2px_0_#D6DFE3] overflow-hidden grid grid-cols-1 lg:grid-cols-[560px_1fr]">
+    <aside class="bg-sea-dark text-white p-12 flex flex-col justify-between gap-6">
+      <a href="index.html" class="inline-flex items-center gap-2.5 no-underline">
+        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
+        <span class="font-display text-[22px] font-bold tracking-tight">Horizonte</span>
+      </a>
+      <div class="my-auto">
+        <h2 class="font-display text-[40px] leading-[1.1] tracking-[-0.02em] mb-4">Vamos ajudar você a entrar de novo</h2>
+        <p class="text-[18px] opacity-85 max-w-[380px]">Enviaremos um link para o seu e-mail para você criar uma nova senha.</p>
+      </div>
+    </aside>
+    <main class="flex items-center justify-center p-12">
+      <div class="w-[420px] flex flex-col gap-4">
+        <h2 class="font-display text-[34px] tracking-[-0.02em]">Recuperar senha</h2>
+        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>E-mail</span><input type="email" class="bg-white border-[1.5px] border-line rounded-lg p-3 text-base font-normal outline-none focus:border-sea" value="marina@email.com"></label>
+        <a href="login.html" class="block bg-sea-dark text-white rounded-full py-4 text-center font-bold text-base mt-2 hover:bg-sea transition-colors">Enviar link de recuperação</a>
+        <p class="text-center text-mut text-[15px] mt-2"><a href="login.html" class="text-sea font-bold underline">Voltar para o login</a></p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
