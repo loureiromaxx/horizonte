@@ -1,0 +1,50 @@
+name: Deploy no GitHub Pages
+
+on:
+  push:
+    branches: ['main']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Compilar projeto
+        run: npm run build
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v4
+
+      - name: Enviar artefatos de build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
