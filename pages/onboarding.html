@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Onboarding | Horizonte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#F2F5F6', ink: '#13242C', mut: '#5B6E77', line: '#D6DFE3', sea: '#1D5B78', 'sea-dark': '#133F55', seas: '#E4EFF4', sun: '#F0A33B', suns: '#FDF1DC' },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Bricolage Grotesque', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#DDE4E8] font-sans text-ink min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-[1440px] min-h-[660px] bg-paper rounded-md shadow-[0_2px_0_#D6DFE3] overflow-hidden flex flex-col">
+    <header class="flex items-center justify-between px-6 md:px-14 h-[76px] bg-white border-b border-line">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 no-underline">
+        <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
+        <span class="font-display text-[22px] font-bold tracking-tight">Horizonte</span>
+      </a>
+      <a href="../index.html" class="text-sea font-bold text-sm underline underline-offset-2">Sair</a>
+    </header>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] p-6 md:p-16 gap-8 lg:gap-16 flex-1">
+      <div id="area-stepper" class="lg:border-r lg:border-line lg:pr-8"></div>
+      <main id="area-painel" class="max-w-[640px] flex flex-col gap-5 justify-center"></main>
+    </div>
+  </div>
+
+  <script type="module" src="../src/js/onboarding.js"></script>
+</body>
+</html>
