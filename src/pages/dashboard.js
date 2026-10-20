@@ -1,6 +1,7 @@
 import {carregarPlano} from "../lib/plano-storage.js";
 import {listarMetas} from "../lib/metas-storage.js";
 import {formatarMoeda, formatarPrevisao} from "../lib/formatadores.js";
+import {calcularPlanoCompleto} from "../lib/calculos.js";
 
 const plano = carregarPlano();
 const metas = listarMetas();
@@ -9,17 +10,22 @@ console.log("Dados do plano carregados: ", plano);
 console.log("Metas carregadas: ", metas);
 
 function renderizarIndicadores(dados) {
-  const patrimonio = dados.patrimonio;
-  const aporte = dados.aporte;
-  const renda = dados.renda;
-  const anoChegada = dados.anoChegada;
-  const idadeChegada = dados.idadeChegada;
-  
-  document.getElementById("indicador-patrimonio").textContent = formatarMoeda(patrimonio);
-  document.getElementById("indicador-aporte").textContent = formatarMoeda(aporte);
-  document.getElementById("indicador-meta").textContent = `${formatarMoeda(renda)}/mês`;
+  const calculos = calcularPlanoCompleto(dados);
+
+  const anoChegada = calculos.anoChegada ?? dados.anoChegada ?? 2057;
+  const idadeChegada = calculos.idadeNaMeta ?? dados.idadeChegada ?? 53;
+  const anosRestantes = calculos.anosAteMeta ?? 31;
+
+  document.getElementById("indicador-patrimonio").textContent = formatarMoeda(dados.patrimonio);
+  document.getElementById("indicador-aporte").textContent = formatarMoeda(dados.aporte);
+  document.getElementById("indicador-meta").textContent = `${formatarMoeda(dados.renda)}/mês`;
   document.getElementById("indicador-chegada").textContent = `dez/${anoChegada}`;
   document.getElementById("indicador-idade").textContent = `aos ${idadeChegada} anos`;
+
+  const Anos = document.getElementById("anos-restantes");
+  if (Anos) {
+    Anos.textContent = anosRestantes;
+  }
 }
 
 const METAS_PADRAO = [
