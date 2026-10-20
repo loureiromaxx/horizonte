@@ -25,3 +25,8 @@ export function atualizarMeta(id, dados) {
   );
   salvarMetas(metas);
 }
+
+export function excluirMeta(id) {
+  const metas = listarMetas().filter((meta) => meta.id !== id);
+  salvarMetas(metas);
+}
