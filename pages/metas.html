@@ -74,13 +74,13 @@
 
         <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut mt-2">Minhas metas · data desejada</p>
         <div class="bg-white border border-line rounded-xl overflow-hidden flex flex-col">
-          <div class="p-6 flex flex-col gap-2">
+          <div id="lista-metas" class="flex flex-col">
             <div class="flex justify-between items-center font-bold text-lg"><span>Intercâmbio</span><span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">até dez/2028</span></div>
             <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:7.5%"></div></div>
             <div class="flex justify-between text-sm text-mut"><span>R$ 3.000 de R$ 40.000</span><span class="flex gap-4"><a href="#" class="text-sea font-bold underline">Editar</a><a href="#" class="text-red-600 font-bold underline">Excluir</a></span></div>
             <div class="flex justify-between text-sm text-mut mt-1"><span>Guarde cerca de R$ 1.335 por mês, além do seu aporte</span><span>8% concluído</span></div>
           </div>
-          <div class="m-6 border-[1.5px] dashed border-line rounded-lg p-3 text-center text-sea font-bold text-sm cursor-pointer hover:bg-seas transition-colors">+ Adicionar nova meta</div>
+          <div id="btn-nova-meta" class="m-6 border-[1.5px] dashed border-line rounded-lg p-3 text-center text-sea font-bold text-sm cursor-pointer hover:bg-seas transition-colors">+ Adicionar nova meta</div>
         </div>
       </div>
 
@@ -120,6 +120,8 @@
     </div>
   </main>
   <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line mt-12">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
+  <script type="module" src="../src/pages/metas-form.js"></script>
+  <script type="module" src="../src/pages/metas.js"></script>
   <script type="module" src="../src/pages/metas-form.js"></script>
 </body>
 </html>
