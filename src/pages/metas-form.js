@@ -1,4 +1,4 @@
-import { criarMeta, buscarMeta, atualizarMeta } from "../lib/metas-storage.js";
+import { criarMeta, buscarMeta, atualizarMeta, excluirMeta } from "../lib/metas-storage.js";
 import { validarMeta } from "../lib/validacao.js";
 
 const form = document.querySelector("#form-meta");
@@ -58,6 +58,27 @@ document.addEventListener("click", (evento) => {
   evento.preventDefault();
   const meta = buscarMeta(botao.dataset.id);
   if (meta) entrarModoEdicao(meta);
+});
+
+document.addEventListener("click", (evento) => {
+  const botao = evento.target.closest('[data-acao="excluir"]');
+  if (!botao) return;
+
+  evento.preventDefault();
+  const meta = buscarMeta(botao.dataset.id);
+  if (!meta) return;
+
+  const confirmou = window.confirm(`Excluir a meta "${meta.nome}"?`);
+  if (!confirmou) return;
+
+  excluirMeta(meta.id);
+
+  if (idEmEdicao === meta.id) {
+    voltarModoCriacao();
+  }
+
+  mostrarSucesso("Meta excluída!");
+  window.dispatchEvent(new CustomEvent("metas:atualizadas"));
 });
 
 form.addEventListener("submit", (evento) => {
