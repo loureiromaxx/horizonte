@@ -1,16 +1,10 @@
-function salvar() {
-    const dados = {
-        idadeInput: document.querySelector('#idade'),
-        patrimonioInput: document.querySelector('#patrimonio-atual'),
-        rendaInput: document.querySelector('#renda-mensal'),
-        inflacaoInput: document.querySelector('#inflacao')
-    }
+function salvar(dados) {
     
     const erros = validarDados(dados);
     exibirMsgErro(erros, dados);
 
     if (Object.keys(erros).length !== 0) {
-        return
+        return;
     }
 }
 
@@ -102,8 +96,42 @@ function exibirMsgErro(erros, dados) {
     }
 }
 
+function carregarDados(dados) {
+    const plano = JSON.parse(localStorage.getItem('horizonte:plano'));
+
+    if (plano) {
+        dados.idadeInput.value = plano.idade;
+        dados.patrimonioInput.value = plano.patrimonio;
+        dados.rendaInput.value = plano.renda;
+        dados.inflacaoInput.value = plano.inflacao;
+
+        return plano;
+    }
+}
+
+// Programa principal
+
+const dados = {
+        idadeInput: document.querySelector('#idade'),
+        patrimonioInput: document.querySelector('#patrimonio-atual'),
+        rendaInput: document.querySelector('#renda-mensal'),
+        inflacaoInput: document.querySelector('#inflacao')
+    }
+
+let plano = carregarDados(dados);
+
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
     event.preventDefault();
-    salvar();
+    salvar(dados);
 });
+
+
+/*
+"renda": ,
+"idade": ,
+"patrimonio": ,
+"aporte": ,
+"rendimento": ,
+"inflacao": ,
+*/
