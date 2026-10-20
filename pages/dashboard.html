@@ -38,18 +38,19 @@
   </header>
 
   <main class="p-14 max-w-[1440px] mx-auto w-full flex-1 flex flex-col gap-6">
+
     <div class="flex justify-between items-end">
       <div>
-        <h1 class="font-display text-[40px] tracking-[-0.02em]">Olá, Marina</h1>
-        <p class="text-mut text-[17px] mt-1">Você está a 31 anos da independência financeira.</p>
+        <h1 class="font-display text-[40px] tracking-[-0.02em]">Olá, <span id="usuario-nome">Marina</span></h1>
+        <p class="text-mut text-[17px] mt-1">Você está a <span id="anos-restantes">31</span> anos da independência financeira.</p>      
       </div>
     </div>
 
     <div class="grid grid-cols-4 bg-white border border-line rounded-xl overflow-hidden my-2">
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Patrimônio atual</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 8.000</b></div>
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Aporte mensal</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 1.200</b></div>
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Meta de renda</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 5.000/mês</b></div>
-      <div class="p-6 flex flex-col"><span class="text-sm text-mut">Chegada prevista</span><b class="font-display text-[30px] tracking-[-0.02em]">dez/2057</b><small class="text-mut text-xs">aos 53 anos</small></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Patrimônio atual</span><b id="indicador-patrimonio" class="font-display text-[30px] tracking-[-0.02em]">R$ 8.000</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Aporte mensal</span><b id="indicador-aporte" class="font-display text-[30px] tracking-[-0.02em]">R$ 1.200</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Meta de renda</span><b id="indicador-meta" class="font-display text-[30px] tracking-[-0.02em]">R$ 5.000/mês</b></div>
+      <div class="p-6 flex flex-col"><span class="text-sm text-mut">Chegada prevista</span><b id="indicador-chegada" class="font-display text-[30px] tracking-[-0.02em]">dez/2057</b><small id="indicador-idade" class="text-mut text-xs">aos 53 anos</small></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-6 items-start">
