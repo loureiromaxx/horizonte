@@ -1,4 +1,4 @@
-function salvar(dados) {
+function salvarDados(dados, plano) {
     
     const erros = validarDados(dados);
     exibirMsgErro(erros, dados);
@@ -6,6 +6,13 @@ function salvar(dados) {
     if (Object.keys(erros).length !== 0) {
         return;
     }
+
+    plano.idade = Number(dados.idadeInput.value);
+    plano.patrimonio = Number(dados.patrimonioInput.value);
+    plano.renda = Number(dados.rendaInput.value);
+    plano.inflacao = Number(dados.inflacaoInput.value);
+
+    localStorage.setItem('horizonte:plano', JSON.stringify(plano));
 }
 
 function validarDados({idadeInput, patrimonioInput, rendaInput, inflacaoInput}) {
@@ -98,15 +105,15 @@ function exibirMsgErro(erros, dados) {
 
 function carregarDados(dados) {
     const plano = JSON.parse(localStorage.getItem('horizonte:plano'));
+    
+    if (!plano) return {};
+    
+    dados.idadeInput.value = plano.idade;
+    dados.patrimonioInput.value = plano.patrimonio;
+    dados.rendaInput.value = plano.renda;
+    dados.inflacaoInput.value = plano.inflacao;
 
-    if (plano) {
-        dados.idadeInput.value = plano.idade;
-        dados.patrimonioInput.value = plano.patrimonio;
-        dados.rendaInput.value = plano.renda;
-        dados.inflacaoInput.value = plano.inflacao;
-
-        return plano;
-    }
+    return plano;
 }
 
 // Programa principal
@@ -123,15 +130,5 @@ let plano = carregarDados(dados);
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
     event.preventDefault();
-    salvar(dados);
+    salvarDados(dados, plano);
 });
-
-
-/*
-"renda": ,
-"idade": ,
-"patrimonio": ,
-"aporte": ,
-"rendimento": ,
-"inflacao": ,
-*/
