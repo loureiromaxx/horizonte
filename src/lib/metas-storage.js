@@ -14,3 +14,14 @@ export function criarMeta(dados) {
   salvarMetas([...listarMetas(), nova]);
   return nova;
 }
+
+export function buscarMeta(id) {
+  return listarMetas().find((meta) => meta.id === id);
+}
+
+export function atualizarMeta(id, dados) {
+  const metas = listarMetas().map((meta) =>
+    meta.id === id ? { ...meta, ...dados } : meta
+  );
+  salvarMetas(metas);
+}
