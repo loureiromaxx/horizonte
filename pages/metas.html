@@ -84,17 +84,42 @@
         </div>
       </div>
 
-      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
-        <h3 class="font-display text-[17px] font-bold">Nova meta</h3>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Nome</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">Intercâmbio</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Valor</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 40.000</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Data desejada</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">dez/2028</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Quanto você já tem para essa meta</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 3.000</div><small class="text-mut font-normal text-xs">Começa em R$ 0 se você ainda não guardou nada para ela.</small></label>
-        <div class="bg-suns border-l-4 border-sun rounded-r-[10px] rounded-l-[4px] p-4 text-sm">Guarde cerca de <b>R$ 1.335 por mês</b>, além do seu aporte, para chegar a tempo.</div>
-        <a href="#" class="block bg-sea-dark text-white rounded-full py-3.5 text-center font-bold hover:bg-sea transition-colors">Salvar meta</a>
-      </div>
+      <form id="form-meta" novalidate class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+        <h3 id="titulo-form" class="font-display text-[17px] font-bold">Nova meta</h3>
+        
+        <label class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Nome</span>
+          <input name="nome" type="text" placeholder="Intercâmbio" class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal outline-none focus:border-sea">
+          <small data-erro="nome" class="text-red-600 font-normal text-xs"></small>
+        </label>
+
+        <label class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Valor</span>
+          <input name="valorMeta" type="number" min="0" step="0.01" placeholder="40000" class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal outline-none focus:border-sea">
+          <small data-erro="valorMeta" class="text-red-600 font-normal text-xs"></small>
+        </label>
+
+        <label class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Data desejada</span>
+          <input name="dataDesejada" type="month" class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal outline-none focus:border-sea">
+          <small data-erro="dataDesejada" class="text-red-600 font-normal text-xs"></small>
+        </label>
+
+        <label class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Quanto você já tem para essa meta</span>
+          <input name="valorAtual" type="number" min="0" step="0.01" placeholder="0" class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal outline-none focus:border-sea">
+          <small data-erro="valorAtual" class="text-red-600 font-normal text-xs"></small>
+          <small class="text-mut font-normal text-xs">Começa em R$ 0 se você ainda não guardou nada para ela.</small>
+        </label>
+
+        <div class="flex gap-3">
+          <button type="submit" class="flex-1 bg-sea-dark text-white rounded-full py-3.5 font-bold hover:bg-sea transition-colors">Salvar meta</button>
+          <button type="button" id="btn-cancelar" class="border-[1.5px] border-sea-dark text-sea-dark rounded-full px-6 py-3.5 font-bold hover:bg-seas transition-colors">Cancelar</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line mt-12">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
+  <script type="module" src="../src/pages/metas-form.js"></script>
 </body>
 </html>
