@@ -37,13 +37,13 @@ function carregarDados(dados) {
 
     dados.projecaoIdade.textContent = projecao.idadeNaMeta === null ? "Meta não atingida" : `${projecao.idadeNaMeta} anos`;
 
-    dados.projecaoMes.textContent = projecao.anoChegada === null ? "—" : `${projecao.mesDoAno}/${projecao.anoChegada}`;
+    dados.projecaoData.textContent = projecao.anoChegada === null ? "" : `${projecao.mesDoAno}/${projecao.anoChegada}`;
 
     dados.projecaoAnos.textContent = `Patrimônio em ${projecao.anosAteMeta ?? "—"} anos`;
 
-    dados.projecaoPatrimonio.textContent = projecao.idadeNaMeta === null || projecao.patrimonioMeta === null ? "—" : formatarMoeda(projecao.patrimonioMeta);
+    dados.projecaoPatrimonio.textContent = projecao.idadeNaMeta === null || projecao.patrimonioMeta === null ? "Meta não atingida" : formatarMoeda(projecao.patrimonioMeta);
 
-    dados.projecaoAportes.textContent = projecao.totalAportado === null ? "—" : formatarMoeda(projecao.totalAportado);
+    dados.projecaoAportes.textContent = projecao.totalAportado === null ? "Meta não atingida" : formatarMoeda(projecao.totalAportado);
 
     return plano;
 }
@@ -55,7 +55,7 @@ const dados = {
         inflacaoInput: document.querySelector('#inflacao'),
         aporteMensal: document.querySelector('#aporte-mensal'),
         projecaoIdade: document.querySelector('#idade-projecao'),
-        projecaoMes: document.querySelector('#mes-projecao'),
+        projecaoData: document.querySelector('#data-projecao'),
         projecaoAnos: document.querySelector('#anos-projecao'),
         projecaoPatrimonio: document.querySelector('#patrimonio-projecao'),
         projecaoAportes: document.querySelector('#aportes-projecao')
