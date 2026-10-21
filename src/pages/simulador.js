@@ -13,6 +13,7 @@ function salvarDados(dados, plano) {
     plano.inflacao = Number(dados.inflacaoInput.value);
 
     localStorage.setItem('horizonte:plano', JSON.stringify(plano));
+    location.reload();
 }
 
 function validarDados({idadeInput, patrimonioInput, rendaInput, inflacaoInput}) {

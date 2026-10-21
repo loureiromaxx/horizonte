@@ -17,7 +17,7 @@ export function calcularPatrimonioMeta(rendaMensal, rentabilidadeRealAnual) {
 }
 
 export function calcularProximoMes(patrimonioAtual, aporteMensal, rentabilidadeMensal) {
-  return patrimonioAtual * (1 + rentabilidadeMensal) + aporteMensal;
+  return Math.round(patrimonioAtual * (1 + rentabilidadeMensal) + aporteMensal);
 }
 
 export function simularAteMeta(patrimonioInicial, aporteMensal, rentabilidadeMensal, patrimonioMeta, idadeAtual) {
@@ -56,14 +56,20 @@ export function simularAteMeta(patrimonioInicial, aporteMensal, rentabilidadeMen
   };
 }
 
-export function calcularPatrimonioEm30Anos(patrimonioInicial, aporteMensal, rentabilidadeMensal) {
-  let patrimonio = patrimonioInicial;
+export function calcularPatrimonio(patrimonioInicial, aporteMensal, rentabilidadeMensal, anos) {
+  let patrimonioAtual = patrimonioInicial;
+  const patrimonio5Anos = [patrimonioAtual];
+  const meses = anos * 12;
 
-  for (let mes = 1; mes <= 360; mes++) {
-    patrimonio = calcularProximoMes(patrimonio, aporteMensal, rentabilidadeMensal);
+
+  for (let mes = 1; mes <= meses; mes++) {
+    patrimonioAtual = calcularProximoMes(patrimonioAtual, aporteMensal, rentabilidadeMensal);
+    if (mes % 12 === 0) {
+      patrimonio5Anos.push(patrimonioAtual);
+    }
   }
 
-  return Math.round(patrimonio);
+  return patrimonio5Anos;
 }
 
 export function calcularAporte25Anos(patrimonioMeta, patrimonioAtual, rentabilidadeMensal) {
@@ -98,22 +104,22 @@ export function calcularPlanoCompleto(dados) {
   const patrimonioMeta = calcularPatrimonioMeta(renda, rentabilidadeRealAnual);
 
   const simulacao = simularAteMeta(patrimonio, aporte, rentabilidadeRealMensal, patrimonioMeta, idade);
-  const patrimonio30Anos = calcularPatrimonioEm30Anos(patrimonio, aporte, rentabilidadeRealMensal);
-  const aporte25Anos = calcularAporte25Anos(patrimonioMeta, patrimonio, rentabilidadeRealMensal);
 
   const anoAtual = new Date().getFullYear();
   const anoChegada = simulacao.anosAteMeta ? anoAtual + simulacao.anosAteMeta : null;
+  const anosAteMeta = simulacao.anosAteMeta;
+
+   const patrimonio5Anos = calcularPatrimonio(patrimonio, aporte, rentabilidadeRealMensal, anosAteMeta + 15);
 
   return {
     rentabilidadeRealAnual,
     rentabilidadeRealMensal,
     patrimonioMeta: Math.round(patrimonioMeta),
     mesesAteMeta: simulacao.mesesAteMeta,
-    anosAteMeta: simulacao.anosAteMeta,
+    anosAteMeta,
     idadeNaMeta: simulacao.idadeNaMeta,
     anoChegada,
     totalAportado: simulacao.totalAportado,
-    patrimonio30Anos,
-    aporte25Anos,
+    patrimonio5Anos
   };
 }
