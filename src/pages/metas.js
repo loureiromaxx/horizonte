@@ -46,27 +46,27 @@ export function renderizarMetas() {
         const borderClass = index !== metas.length - 1 ? 'border-b border-line' : '';
 
         const cardHTML = `
-            <div class="p-6 flex flex-col gap-2 ${borderClass}">
-                <div class="flex justify-between items-center font-bold text-lg">
-                    <span>${meta.nome}</span>
-                    <span class="bg-suns text-sun-dark text-sm rounded-full px-3 py-1">até ${formatarData(meta.dataDesejada)}</span>
+            <div class="flex min-w-0 flex-col gap-2 p-4 sm:p-6 ${borderClass}">
+                <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg">
+                    <span class="min-w-0 break-words">${meta.nome}</span>
+                    <span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">até ${formatarData(meta.dataDesejada)}</span>
                 </div>
                 
                 <div class="h-3.5 bg-seas rounded-full my-1">
                     <div class="h-full bg-sun rounded-full" style="width: ${Math.min(porcentagem, 100)}%"></div>
                 </div>
                 
-                <div class="flex justify-between text-sm text-mut">
-                    <span>${formataDinheiro(meta.valorAtual)} de ${formataDinheiro(meta.valorMeta)}</span>
-                    <span class="flex gap-4">
+                <div class="flex flex-wrap justify-between gap-2 text-sm text-mut">
+                    <span class="break-words">${formataDinheiro(meta.valorAtual)} de ${formataDinheiro(meta.valorMeta)}</span>
+                    <span class="flex shrink-0 gap-4">
                         <button data-acao="editar" data-id="${meta.id}" class="text-sea font-bold underline cursor-pointer hover:text-sea-dark">Editar</button>
                         <button data-acao="excluir" data-id="${meta.id}" class="text-red-600 font-bold underline cursor-pointer hover:text-red-800">Excluir</button>
                     </span>
                 </div>
                 
-                <div class="flex justify-between text-sm text-mut mt-1">
-                    <span>Guarde cerca de ${formataDinheiro(poupancaMensal)} por mês, além do seu aporte</span>
-                    <span>${porcentagem}% concluído</span>
+                <div class="mt-1 flex flex-wrap justify-between gap-1 text-sm text-mut">
+                    <span class="break-words">Guarde cerca de ${formataDinheiro(poupancaMensal)} por mês, além do seu aporte</span>
+                    <span class="shrink-0">${porcentagem}% concluído</span>
                 </div>
             </div>
         `;
