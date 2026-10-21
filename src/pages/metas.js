@@ -1,6 +1,9 @@
 import { listarMetas } from "../lib/metas-storage.js";
 
-document.addEventListener('DOMContentLoaded', renderizarMetas);
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarMetas();
+    renderizarMarcos();
+});
 
 window.addEventListener("metas:atualizadas", renderizarMetas);
 
@@ -67,6 +70,52 @@ export function renderizarMetas() {
                 <div class="mt-1 flex flex-wrap justify-between gap-1 text-sm text-mut">
                     <span class="break-words">Guarde cerca de ${formataDinheiro(poupancaMensal)} por mês, além do seu aporte</span>
                     <span class="shrink-0">${porcentagem}% concluído</span>
+                </div>
+            </div>
+        `;
+
+        container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+}
+
+export function renderizarMarcos() {
+    const container = document.getElementById('lista-marcos');
+    if (!container) return;
+
+    // VALOR GLOBAL DO USUÁRIO: 
+    // Substitua este número pela variável real que puxa o saldo da sua aplicação (ex: do localStorage).
+    const saldoAtualUsuario = 8000; 
+
+    // Lista de marcos que antes estava estática no HTML
+    const marcos = [
+        { nome: 'Reserva de emergência', valorAlvo: 15000, data: 'abr/2027' },
+        { nome: 'Primeiros R$ 50 mil', valorAlvo: 50000, data: 'jun/2029' },
+        { nome: 'R$ 250 mil', valorAlvo: 250000, data: 'set/2038' },
+        { nome: 'Independência financeira', valorAlvo: 1140000, data: 'dez/2057' }
+    ];
+
+    container.innerHTML = '';
+    const formataDinheiro = (valor) => Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    marcos.forEach((marco, index) => {
+        // Calcula a porcentagem real com base no saldo do usuário
+        const porcentagem = saldoAtualUsuario > 0 ? ((saldoAtualUsuario / marco.valorAlvo) * 100).toFixed(1) : 0;
+        const borderClass = index !== marcos.length - 1 ? 'border-b border-line' : '';
+
+        const cardHTML = `
+            <div class="p-6 ${borderClass} flex flex-col gap-2">
+                <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg">
+                    <span>${marco.nome}</span>
+                    <span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">${marco.data}</span>
+                </div>
+                
+                <div class="h-3.5 bg-seas rounded-full my-1">
+                    <div class="h-full bg-sun rounded-full" style="width: ${Math.min(porcentagem, 100)}%"></div>
+                </div>
+                
+                <div class="flex flex-wrap justify-between gap-1 text-sm text-mut">
+                    <span>${formataDinheiro(saldoAtualUsuario)} de ${formataDinheiro(marco.valorAlvo)}</span>
+                    <span>${porcentagem.replace('.0', '')}% concluído</span>
                 </div>
             </div>
         `;
