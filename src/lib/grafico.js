@@ -69,7 +69,12 @@ new Chart(ctx, {
                 max: Math.floor(limiteAnos / 5) * 5,
                 ticks: {
                     stepSize: 5,
-                    callback: v => v === 0 ? 'Hoje' : `${v} anos`
+                    callback: v => v === 0 ? 'Hoje' : `${v} anos`,
+                    font: {
+                        family: "'DM Sans', 'sans-serif'",
+                        size: 13,
+                    },
+                    color: '#333'
                 }
             },
             y: {
@@ -81,7 +86,12 @@ new Chart(ctx, {
                             currency: 'BRL',
                             maximumFractionDigits: 0
                         });
-                    }
+                    },
+                    font: {
+                        family: "'DM Sans', 'sans-serif'",
+                        size: 13,
+                    },
+                    color: '#333'
                 }
             }
         },

@@ -56,9 +56,9 @@ function renderizarProximasMetas(listaMetas) {
 
       return `
             <div>
-                <div class="flex justify-between text-[15px]">
-                    <b>${meta.nome}</b>
-                    <span class="text-mut text-sm">${formatarMoeda(meta.valorAtual)} de ${formatarMoeda(meta.valorMeta)}</span>
+                <div class="flex flex-wrap justify-between gap-2 text-[15px]">
+                    <b class="break-words">${meta.nome}</b>
+                    <span class="break-words text-sm text-mut">${formatarMoeda(meta.valorAtual)} de ${formatarMoeda(meta.valorMeta)}</span>
                 </div>
                 <div class="h-2 bg-seas rounded-full my-2">
                     <div class="h-full bg-sea rounded-full" style="width: ${progresso}%"></div>
