@@ -8,37 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            paper: '#F6F8F9',
-            ink: '#13242C',
-            mut: '#5B6E77',
-            line: '#D6DFE3',
-            sea: '#1D5B78',
-            'sea-dark': '#133F55',
-            'sea-soft': '#E4EFF4',
-            sun: '#F0A33B',
-            'sun-dark': '#B87410',
-            'sun-soft': '#FDF1DC'
-          },
-          fontFamily: {
-            sans: ['DM Sans', 'sans-serif'],
-            display: ['Bricolage Grotesque', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
-<body class="bg-paper font-sans text-ink antialiased">
+<body class="bg-paper-dark font-sans text-ink antialiased">
 <div class="bg-no-repeat bg-[radial-gradient(ellipse_900px_520px_at_50%_0,#FDF1DC,transparent_70%)]">
   
   <!-- Cabeçalho -->
-  <header class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md">
+  <header class="sticky top-0 z-40 bg-paper-dark/85 backdrop-blur-md">
     <div class="mx-auto grid h-[76px] max-w-[1120px] grid-cols-[auto_1fr] items-center px-6 md:grid-cols-[1fr_auto_1fr]">
       <a href="#inicio" class="inline-flex items-center gap-2.5" aria-label="Horizonte, início">
         <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
@@ -58,10 +34,10 @@
     
     <!-- Hero -->
     <section class="pb-14 pt-12 text-center md:pt-20">
-      <h1 class="mx-auto max-w-[900px] font-display text-[40px] font-bold leading-[1.03] tracking-[-0.025em] sm:text-6xl md:text-[76px]">
+      <h1 class="mx-auto max-w-[900px] font-display text-[40px] font-bold leading-[1.03] tracking-[-0.025em] sm:text-6xl md:text-[76px] md:leading-[1]">
         Viver de renda, <em class="not-italic text-sun-dark">meta por meta.</em>
       </h1>
-      <p class="mx-auto mb-9 mt-6 max-w-[700px] text-lg text-mut md:text-[21px]">
+      <p class="mx-auto mb-9 mt-6 max-w-[700px] text-lg text-mut md:text-[21px] md:leading-7">
         Simule em quantos anos você pode viver de renda. Crie suas próprias metas e veja quanto guardar por mês para chegar a tempo em cada uma.
       </p>
       <a href="./pages/onboarding.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea font-bold transition-colors px-8 py-4 text-[17px]">Começar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -159,7 +135,7 @@
         <div class="flex min-w-0 flex-col rounded-[22px] border border-line bg-white p-6 sm:p-8">
           <h3 class="mb-1.5 font-display text-[28px] font-bold tracking-tight">Simulador</h3>
           <p class="mb-5 text-mut">Descubra em quantos anos você pode viver de renda.</p>
-          <div class="mb-5 rounded-[14px] border border-line bg-paper p-4">
+          <div class="mb-5 rounded-[14px] border border-line bg-paper-dark p-4">
             
             <!-- Chart 2 Placeholder -->
             <svg class="block h-auto w-full" viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemplo com duas linhas: o plano atual e a sua simulação com aporte maior">
@@ -203,7 +179,7 @@
         <div class="flex min-w-0 flex-col rounded-[22px] border border-line bg-white p-6 sm:p-8">
           <h3 class="mb-1.5 font-display text-[28px] font-bold tracking-tight">Metas</h3>
           <p class="mb-5 text-mut">Crie marcos e objetivos pessoais e acompanhe cada um.</p>
-          <div class="mb-5 rounded-[14px] border border-line bg-paper p-4">
+          <div class="mb-5 rounded-[14px] border border-line bg-paper-dark p-4">
             <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Reserva de emergência</b><span class="whitespace-nowrap text-mut">abr/2027</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[53%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 15.000</small></div>
             <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Primeiros R$ 50 mil</b><span class="whitespace-nowrap text-mut">jun/2029</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[16%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 50.000</small></div>
             <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Intercâmbio</b><span class="whitespace-nowrap text-mut">até dez/2028</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[8%]"></div></div><small class="text-[13px] text-mut">R$ 3.000 de R$ 40.000</small></div>
@@ -220,7 +196,7 @@
 
     <!-- Chamada final -->
     <section class="py-24 text-center">
-      <h2 class="font-display text-3xl font-bold tracking-[-0.025em] md:text-[52px]">Pronto para traçar o seu horizonte?</h2>
+      <h2 class="font-display text-3xl font-bold tracking-[-0.025em] md:text-[52px] md:leading-9">Pronto para traçar o seu horizonte?</h2>
       <p class="mb-8 mt-2.5 text-[19px] text-mut">Entre com sua conta ou crie uma nova em poucos minutos.</p>
       <div class="flex flex-wrap justify-center gap-3.5">
         <a href="./pages/onboarding.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea font-bold transition-colors px-8 py-4 text-[17px]">Começar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
