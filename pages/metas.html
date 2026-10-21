@@ -39,27 +39,8 @@
     <div class="grid min-w-0 grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)]">
       <div class="flex flex-col gap-6">
         <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut">Marcos do plano · data estimada</p>
-        <div class="flex flex-col overflow-hidden rounded-xl border border-line bg-white">
-          <div class="p-6 border-b border-line flex flex-col gap-2">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg"><span>Reserva de emergência</span><span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">abr/2027</span></div>
-            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:53.3%"></div></div>
-            <div class="flex flex-wrap justify-between gap-1 text-sm text-mut"><span>R$ 8.000 de R$ 15.000</span><span>53% concluído</span></div>
-          </div>
-          <div class="p-6 border-b border-line flex flex-col gap-2">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg"><span>Primeiros R$ 50 mil</span><span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">jun/2029</span></div>
-            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:16%"></div></div>
-            <div class="flex flex-wrap justify-between gap-1 text-sm text-mut"><span>R$ 8.000 de R$ 50.000</span><span>16% concluído</span></div>
-          </div>
-          <div class="p-6 border-b border-line flex flex-col gap-2">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg"><span>R$ 250 mil</span><span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">set/2038</span></div>
-            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:3.2%"></div></div>
-            <div class="flex flex-wrap justify-between gap-1 text-sm text-mut"><span>R$ 8.000 de R$ 250.000</span><span>3% concluído</span></div>
-          </div>
-          <div class="p-6 flex flex-col gap-2">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-bold text-base sm:text-lg"><span>Independência financeira</span><span class="shrink-0 rounded-full bg-suns px-3 py-1 text-sm text-sun-dark">dez/2057</span></div>
-            <div class="h-3.5 bg-seas rounded-full my-1"><div class="h-full bg-sun rounded-full" style="width:2%"></div></div>
-            <div class="flex flex-wrap justify-between gap-1 text-sm text-mut"><span>R$ 8.000 de R$ 1.140.000</span><span>1% concluído</span></div>
-          </div>
+        <div id="lista-marcos" class="flex flex-col overflow-hidden rounded-xl border border-line bg-white">
+          
         </div>
 
         <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut mt-2">Minhas metas · data desejada</p>
@@ -113,6 +94,5 @@
   <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line mt-12">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
   <script type="module" src="../src/pages/metas-form.js"></script>
   <script type="module" src="../src/pages/metas.js"></script>
-  <script type="module" src="../src/pages/metas-form.js"></script>
 </body>
 </html>
