@@ -1,4 +1,4 @@
-import { listarMetas } from "../lib/metas-storage.js";
+import { listarMetas, obterSaldoTotalMetas } from "../lib/metas-storage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     renderizarMetas();
@@ -82,11 +82,8 @@ export function renderizarMarcos() {
     const container = document.getElementById('lista-marcos');
     if (!container) return;
 
-    // VALOR GLOBAL DO USUÁRIO: 
-    // Substitua este número pela variável real que puxa o saldo da sua aplicação (ex: do localStorage).
-    const saldoAtualUsuario = 8000; 
+    const saldoAtualUsuario = obterSaldoTotalMetas(); 
 
-    // Lista de marcos que antes estava estática no HTML
     const marcos = [
         { nome: 'Reserva de emergência', valorAlvo: 15000, data: 'abr/2027' },
         { nome: 'Primeiros R$ 50 mil', valorAlvo: 50000, data: 'jun/2029' },
@@ -98,7 +95,6 @@ export function renderizarMarcos() {
     const formataDinheiro = (valor) => Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     marcos.forEach((marco, index) => {
-        // Calcula a porcentagem real com base no saldo do usuário
         const porcentagem = saldoAtualUsuario > 0 ? ((saldoAtualUsuario / marco.valorAlvo) * 100).toFixed(1) : 0;
         const borderClass = index !== marcos.length - 1 ? 'border-b border-line' : '';
 

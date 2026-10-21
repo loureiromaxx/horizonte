@@ -30,3 +30,8 @@ export function excluirMeta(id) {
   const metas = listarMetas().filter((meta) => meta.id !== id);
   salvarMetas(metas);
 }
+
+export function obterSaldoTotalMetas() {
+  const metas = listarMetas();
+  return metas.reduce((total, meta) => total + (Number(meta.valorAtual) || 0), 0);
+}
