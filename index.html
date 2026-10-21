@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Viver de renda, meta por meta | Horizonte</title>
   <meta name="description" content="Simule em quantos anos você pode viver de renda e crie metas com o valor mensal para chegar a tempo.">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,12 +23,11 @@
             'sea-soft': '#E4EFF4',
             sun: '#F0A33B',
             'sun-dark': '#B87410',
-            'sun-soft': '#FDF1DC',
-            good: '#2B8A68'
+            'sun-soft': '#FDF1DC'
           },
           fontFamily: {
             sans: ['DM Sans', 'sans-serif'],
-            display: ['Bricolage Grotesque', 'sans-serif'],
+            display: ['Bricolage Grotesque', 'sans-serif']
           }
         }
       }
@@ -45,70 +42,90 @@
     <div class="mx-auto grid h-[76px] max-w-[1120px] grid-cols-[auto_1fr] items-center px-6 md:grid-cols-[1fr_auto_1fr]">
       <a href="#inicio" class="inline-flex items-center gap-2.5" aria-label="Horizonte, início">
         <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
-        <span class="font-display text-[23px] font-bold tracking-tight text-ink">Horizonte</span>
+        <span class="font-display text-[23px] font-bold tracking-tight">Horizonte</span>
       </a>
-      <nav class="hidden gap-8 text-base md:flex justify-center" aria-label="Seções">
-        <a href="#como-funciona" class="hover:text-sea transition-colors">Como funciona</a>
-        <a href="#recursos" class="hover:text-sea transition-colors">Recursos</a>
-        <a href="#mapa" class="hover:text-sea font-semibold transition-colors">Mapa do Protótipo</a>
+      <nav class="hidden justify-center gap-8 text-base md:flex" aria-label="Seções">
+        <a href="#como-funciona" class="transition-colors hover:text-sea">Como funciona</a>
+        <a href="#recursos" class="transition-colors hover:text-sea">Recursos</a>
       </nav>
       <div class="flex items-center justify-end gap-5">
-        <a href="./pages/cadastro.html" class="hidden text-base text-mut hover:text-ink sm:inline transition-colors">Criar conta</a>
-        <a href="./pages/login.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea px-5 py-2.5 text-[15px] font-bold transition-colors">
-          Entrar 
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <!-- Botão superior removido conforme solicitado -->
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <main id="inicio" class="mx-auto max-w-[1120px] px-6">
-    <section class="px-0 pb-14 pt-12 text-center md:pt-20">
+    
+    <!-- Hero -->
+    <section class="pb-14 pt-12 text-center md:pt-20">
       <h1 class="mx-auto max-w-[900px] font-display text-[40px] font-bold leading-[1.03] tracking-[-0.025em] sm:text-6xl md:text-[76px]">
         Viver de renda, <em class="not-italic text-sun-dark">meta por meta.</em>
       </h1>
       <p class="mx-auto mb-9 mt-6 max-w-[700px] text-lg text-mut md:text-[21px]">
         Simule em quantos anos você pode viver de renda. Crie suas próprias metas e veja quanto guardar por mês para chegar a tempo em cada uma.
       </p>
-      <div class="flex flex-wrap justify-center gap-3.5">
-        <a href="./pages/onboarding-1.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea px-8 py-4 text-[17px] font-bold transition-colors">
-          Iniciar Simulação
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
+      <a href="./pages/onboarding.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea font-bold transition-colors px-8 py-4 text-[17px]">Começar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       <p class="mt-5 text-sm text-mut">Monte seu plano em cerca de dois minutos</p>
     </section>
 
-    <!-- Exemplo Visual -->
+    <!-- Exemplo visual (dados fictícios) -->
     <div class="mx-auto grid max-w-[1040px] items-start gap-6 text-left lg:grid-cols-[1.6fr_1fr]" role="group" aria-label="Exemplo do Horizonte, com dados fictícios">
-      <div class="rounded-[20px] border border-line bg-white p-6 sm:px-7 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)] min-w-0">
+      <div class="min-w-0 rounded-[20px] border border-line bg-white p-6 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)] sm:px-7">
         <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut">Simulador · Seu plano</p>
-        <h2 class="mb-3.5 mt-1 font-display text-[26px] font-bold tracking-tight sm:text-[28px]">Chegada prevista: dez/2057 <span class="text-[17px] font-semibold text-mut font-sans ml-1">em 31 anos</span></h2>
-        <svg class="block h-auto w-full" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemplo de evolução do patrimônio até a meta"><line x1="76" x2="610" y1="268.0" y2="268.0" stroke="#D6DFE3"/><text x="66" y="272.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 0</text><line x1="76" x2="610" y1="184.0" y2="184.0" stroke="#D6DFE3"/><text x="66" y="188.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1 mi</text><line x1="76" x2="610" y1="100.0" y2="100.0" stroke="#D6DFE3"/><text x="66" y="104.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 2 mi</text><line x1="76" x2="610" y1="16.0" y2="16.0" stroke="#D6DFE3"/><text x="66" y="20.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 3 mi</text><text x="76.0" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">Hoje</text><text x="135.3" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">5 anos</text><text x="194.7" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">10 anos</text><text x="254.0" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">15 anos</text><text x="313.3" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">20 anos</text><text x="372.7" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">25 anos</text><text x="432.0" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">30 anos</text><text x="491.3" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">35 anos</text><text x="550.7" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">40 anos</text><text x="610.0" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">45 anos</text><line x1="76" x2="610" y1="172.2" y2="172.2" stroke="#F0A33B" stroke-width="2" stroke-dasharray="7 5"/><text x="84" y="164.2" font-size="12" font-weight="700" fill="#B87410">Meta: R$ 1,14 mi</text><clipPath id="c3"><rect x="76" y="16" width="534" height="252"/></clipPath><g clip-path="url(#c3)"><path d="M 76.0 267.3 L 87.9 266.1 L 99.7 264.7 L 111.6 263.3 L 123.5 261.8 L 135.3 260.3 L 147.2 258.6 L 159.1 256.9 L 170.9 255.0 L 182.8 253.1 L 194.7 251.1 L 206.5 249.0 L 218.4 246.7 L 230.3 244.4 L 242.1 241.9 L 254.0 239.3 L 265.9 236.5 L 277.7 233.6 L 289.6 230.6 L 301.5 227.4 L 313.3 224.0 L 325.2 220.5 L 337.1 216.7 L 348.9 212.8 L 360.8 208.6 L 372.7 204.3 L 384.5 199.7 L 396.4 194.9 L 408.3 189.8 L 420.1 184.4 L 432.0 178.8 L 443.9 172.8 L 455.7 166.6 L 467.6 160.0 L 479.5 153.1 L 491.3 145.8 L 503.2 138.1 L 515.1 130.1 L 526.9 121.6 L 538.8 112.6 L 550.7 103.2 L 562.5 93.3 L 574.4 82.8 L 586.3 71.9 L 598.1 60.3 L 610.0 48.1 L 610.0 268.0 L 76.0 268.0 Z" fill="#1D5B78" fill-opacity="0.10"/><path d="M 76.0 267.3 L 87.9 266.1 L 99.7 264.7 L 111.6 263.3 L 123.5 261.8 L 135.3 260.3 L 147.2 258.6 L 159.1 256.9 L 170.9 255.0 L 182.8 253.1 L 194.7 251.1 L 206.5 249.0 L 218.4 246.7 L 230.3 244.4 L 242.1 241.9 L 254.0 239.3 L 265.9 236.5 L 277.7 233.6 L 289.6 230.6 L 301.5 227.4 L 313.3 224.0 L 325.2 220.5 L 337.1 216.7 L 348.9 212.8 L 360.8 208.6 L 372.7 204.3 L 384.5 199.7 L 396.4 194.9 L 408.3 189.8 L 420.1 184.4 L 432.0 178.8 L 443.9 172.8 L 455.7 166.6 L 467.6 160.0 L 479.5 153.1 L 491.3 145.8 L 503.2 138.1 L 515.1 130.1 L 526.9 121.6 L 538.8 112.6 L 550.7 103.2 L 562.5 93.3 L 574.4 82.8 L 586.3 71.9 L 598.1 60.3 L 610.0 48.1" fill="none" stroke="#1D5B78" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="445.8" cy="172.2" r="15" fill="#F0A33B" fill-opacity="0.25"/><circle cx="445.8" cy="172.2" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/></g></svg>
+        <h2 class="mb-3.5 mt-1 font-display text-[26px] font-bold tracking-tight sm:text-[28px]">Chegada prevista: dez/2057 <span class="ml-1 font-sans text-[17px] font-semibold text-mut">em 31 anos</span></h2>
+        
+        <!-- Chart 1 Placeholder -->
+        <svg class="block h-auto w-full" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemplo de evolução do patrimônio até a meta, em valores de hoje">
+          <line x1="76" x2="610" y1="252" y2="252" stroke="#D6DFE3"/>
+          <text x="66" y="256" text-anchor="end" font-size="11" fill="#5B6E77">R$ 0</text>
+          <line x1="76" x2="610" y1="173" y2="173" stroke="#D6DFE3"/>
+          <text x="66" y="177" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1 mi</text>
+          <line x1="76" x2="610" y1="95" y2="95" stroke="#D6DFE3"/>
+          <text x="66" y="99" text-anchor="end" font-size="11" fill="#5B6E77">R$ 2 mi</text>
+          <text x="76" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">Hoje</text>
+          <text x="135" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">5 anos</text>
+          <text x="195" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">10 anos</text>
+          <text x="254" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">15 anos</text>
+          <text x="313" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">20 anos</text>
+          <text x="373" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">25 anos</text>
+          <text x="432" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">30 anos</text>
+          <text x="491" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">35 anos</text>
+          <text x="551" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">40 anos</text>
+          <text x="610" y="292" text-anchor="middle" font-size="11" fill="#5B6E77">45 anos</text>
+          <line x1="76" x2="610" y1="162" y2="162" stroke="#F0A33B" stroke-width="2" stroke-dasharray="7 5"/>
+          <text x="84" y="154" font-size="12" font-weight="700" fill="#B87410">Meta: R$ 1,14 mi</text>
+          <clipPath id="c640"><rect x="76" y="16" width="534" height="252"/></clipPath>
+          <g clip-path="url(#c640)">
+            <path d="M76 252 Q250 240 440 162 T610 16" fill="#1D5B78" fill-opacity="0.10"/>
+            <path d="M76 252 Q250 240 440 162 T610 16" fill="none" stroke="#1D5B78" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="446" cy="162" r="15" fill="#F0A33B" fill-opacity="0.25"/>
+            <circle cx="446" cy="162" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/>
+          </g>
+        </svg>
+
       </div>
       <div class="grid min-w-0 gap-6 lg:mt-11">
-        <div class="rounded-[20px] border border-line bg-white p-6 sm:px-7 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)]">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut mb-3.5">Próximas metas</p>
-          <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Reserva de emergência</b><span class="whitespace-nowrap text-mut">abr/2027</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[53%]"></div></div><small class="text-mut text-[13px]">R$ 8.000 de R$ 15.000</small></div>
-          <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Primeiros R$ 50 mil</b><span class="whitespace-nowrap text-mut">jun/2029</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[16%]"></div></div><small class="text-mut text-[13px]">R$ 8.000 de R$ 50.000</small></div>
+        <div class="rounded-[20px] border border-line bg-white p-6 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)] sm:px-7">
+          <p class="mb-3.5 text-xs font-bold uppercase tracking-[0.14em] text-mut">Próximas metas</p>
+          <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Reserva de emergência</b><span class="whitespace-nowrap text-mut">abr/2027</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[53%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 15.000</small></div>
+          <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Primeiros R$ 50 mil</b><span class="whitespace-nowrap text-mut">jun/2029</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[16%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 50.000</small></div>
         </div>
       </div>
-      <div class="rounded-[20px] border border-line bg-white p-6 sm:px-7 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)] w-full max-w-[460px] justify-self-center lg:col-span-2">
+      <div class="w-full max-w-[460px] justify-self-center rounded-[20px] border border-line bg-white p-6 shadow-[0_24px_48px_-28px_rgba(19,63,85,0.28)] sm:px-7 lg:col-span-2">
         <p class="text-xs font-bold uppercase tracking-[0.14em] text-mut">Nova meta</p>
         <div class="my-3.5 grid grid-cols-2 gap-2.5 text-left">
-          <div class="col-span-2 md:col-span-1"><span class="mb-1 block text-[11px] text-mut">Nome</span><div class="rounded-lg border-[1.5px] border-line bg-white px-2.5 py-2 text-sm font-bold">Intercâmbio</div></div>
+          <div><span class="mb-1 block text-[11px] text-mut">Nome</span><div class="rounded-lg border-[1.5px] border-line bg-white px-2.5 py-2 text-sm font-bold">Intercâmbio</div></div>
           <div><span class="mb-1 block text-[11px] text-mut">Valor</span><div class="rounded-lg border-[1.5px] border-line bg-white px-2.5 py-2 text-sm font-bold">R$ 40.000</div></div>
           <div><span class="mb-1 block text-[11px] text-mut">Data desejada</span><div class="rounded-lg border-[1.5px] border-line bg-white px-2.5 py-2 text-sm font-bold">dez/2028</div></div>
           <div><span class="mb-1 block text-[11px] text-mut">Já tenho para essa meta</span><div class="rounded-lg border-[1.5px] border-line bg-white px-2.5 py-2 text-sm font-bold">R$ 3.000</div></div>
         </div>
-        <div class="rounded-r-[10px] rounded-l-[4px] border-l-4 border-sun bg-sun-soft px-3.5 py-3 text-sm">Guarde cerca de <b>R$ 1.335 por mês</b>, além do seu aporte, para chegar a tempo.</div>
+        <div class="rounded-l-[4px] rounded-r-[10px] border-l-4 border-sun bg-sun-soft px-3.5 py-3 text-sm">Guarde cerca de <b>R$ 1.335 por mês</b>, além do seu aporte, para chegar a tempo.</div>
       </div>
     </div>
     <p class="mt-5 text-center text-[13px] text-mut">Exemplo com dados fictícios</p>
 
     <!-- Como funciona -->
-    <section id="como-funciona" class="py-16 mt-8">
+    <section id="como-funciona" class="mt-8 py-16">
       <div class="mb-12 text-center">
         <h2 class="font-display text-3xl font-bold tracking-[-0.025em] md:text-5xl">Como funciona</h2>
         <p class="mt-2 text-lg text-mut">Três passos do objetivo até a conquista</p>
@@ -142,68 +159,81 @@
         <div class="flex min-w-0 flex-col rounded-[22px] border border-line bg-white p-6 sm:p-8">
           <h3 class="mb-1.5 font-display text-[28px] font-bold tracking-tight">Simulador</h3>
           <p class="mb-5 text-mut">Descubra em quantos anos você pode viver de renda.</p>
-          <ul class="grid gap-3 mt-auto">
+          <div class="mb-5 rounded-[14px] border border-line bg-paper p-4">
+            
+            <!-- Chart 2 Placeholder -->
+            <svg class="block h-auto w-full" viewBox="0 0 460 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemplo com duas linhas: o plano atual e a sua simulação com aporte maior">
+              <line x1="76" x2="430" y1="192" y2="192" stroke="#D6DFE3"/>
+              <text x="66" y="196" text-anchor="end" font-size="11" fill="#5B6E77">R$ 0</text>
+              <line x1="76" x2="430" y1="133" y2="133" stroke="#D6DFE3"/>
+              <text x="66" y="137" text-anchor="end" font-size="11" fill="#5B6E77">R$ 500 mil</text>
+              <line x1="76" x2="430" y1="75" y2="75" stroke="#D6DFE3"/>
+              <text x="66" y="79" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1 mi</text>
+              <line x1="76" x2="430" y1="16" y2="16" stroke="#D6DFE3"/>
+              <text x="66" y="20" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1,5 mi</text>
+              <text x="76" y="232" text-anchor="middle" font-size="11" fill="#5B6E77">Hoje</text>
+              <text x="165" y="232" text-anchor="middle" font-size="11" fill="#5B6E77">10 anos</text>
+              <text x="253" y="232" text-anchor="middle" font-size="11" fill="#5B6E77">20 anos</text>
+              <text x="342" y="232" text-anchor="middle" font-size="11" fill="#5B6E77">30 anos</text>
+              <text x="430" y="232" text-anchor="middle" font-size="11" fill="#5B6E77">40 anos</text>
+              <line x1="76" x2="430" y1="58" y2="58" stroke="#F0A33B" stroke-width="2" stroke-dasharray="7 5"/>
+              <text x="84" y="50" font-size="12" font-weight="700" fill="#B87410">Meta: R$ 1,14 mi</text>
+              <clipPath id="c460"><rect x="76" y="16" width="354" height="176"/></clipPath>
+              <g clip-path="url(#c460)">
+                <path d="M76 192 Q200 180 345 58 T430 -30" fill="none" stroke="#1D5B78" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="352" cy="58" r="15" fill="#F0A33B" fill-opacity="0.25"/>
+                <circle cx="352" cy="58" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/>
+                <path d="M76 192 Q180 170 295 58 T430 -70" fill="none" stroke="#2B8A68" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 5"/>
+                <circle cx="298" cy="58" r="15" fill="#F0A33B" fill-opacity="0.25"/>
+                <circle cx="298" cy="58" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/>
+              </g>
+            </svg>
+
+            <div class="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[13px] text-mut">
+              <span><i class="mr-1.5 inline-block h-1 w-3 rounded-sm bg-[#1D5B78] align-middle"></i>Plano atual (R$ 1.200 por mês)</span>
+              <span><i class="mr-1.5 inline-block h-1 w-3 rounded-sm bg-[#2B8A68] align-middle"></i>Sua simulação (R$ 1.800 por mês)</span>
+            </div>
+          </div>
+          <ul class="grid gap-3">
             <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Gráfico de evolução do patrimônio até a sua meta</span></li>
-            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Controles “e se...?” para aporte, rendimento e prazo</span></li>
-            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Quanto guardar por mês para chegar a tempo</span></li>
+            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compare o plano atual com a sua simulação no mesmo gráfico</span></li>
+            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Valores sempre em poder de compra de hoje</span></li>
           </ul>
         </div>
         <div class="flex min-w-0 flex-col rounded-[22px] border border-line bg-white p-6 sm:p-8">
           <h3 class="mb-1.5 font-display text-[28px] font-bold tracking-tight">Metas</h3>
           <p class="mb-5 text-mut">Crie marcos e objetivos pessoais e acompanhe cada um.</p>
-          <ul class="grid gap-3 mt-auto">
+          <div class="mb-5 rounded-[14px] border border-line bg-paper p-4">
+            <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Reserva de emergência</b><span class="whitespace-nowrap text-mut">abr/2027</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[53%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 15.000</small></div>
+            <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Primeiros R$ 50 mil</b><span class="whitespace-nowrap text-mut">jun/2029</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[16%]"></div></div><small class="text-[13px] text-mut">R$ 8.000 de R$ 50.000</small></div>
+            <div class="mb-5"><div class="flex justify-between gap-3 text-[15px]"><b>Intercâmbio</b><span class="whitespace-nowrap text-mut">até dez/2028</span></div><div class="my-2 h-2.5 rounded-full bg-sea-soft"><div class="h-full rounded-full bg-sun w-[8%]"></div></div><small class="text-[13px] text-mut">R$ 3.000 de R$ 40.000</small></div>
+          </div>
+          <ul class="grid gap-3">
             <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Marcos como reserva de emergência e primeiros R$ 50 mil</span></li>
             <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Barra de progresso e data estimada para cada meta</span></li>
-            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Metas próprias com valor e data desejada</span></li>
+            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Metas próprias, como um intercâmbio, com valor e data desejada</span></li>
+            <li class="flex items-start gap-3 text-[17px]"><svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B8A68" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Cálculo de quanto guardar por mês para chegar a tempo</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Mapa do Protótipo -->
-    <section id="mapa" class="pt-16 pb-12">
-      <div class="mb-10 text-center">
-        <h2 class="mt-2 font-display text-3xl font-bold tracking-[-0.025em] md:text-5xl">Mapa do Protótipo</h2>
-      </div>
-      
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-[20px] border border-line bg-white p-6 shadow-sm">
-          <h3 class="mb-4 font-display text-[22px] font-bold tracking-tight">1. Acesso</h3>
-          <ul class="flex flex-col gap-1.5">
-            <li><a href="./pages/cadastro.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Cadastro<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/login.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Login<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/recuperar-senha.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Recuperar senha<span class="text-mut" aria-hidden="true">›</span></a></li>
-          </ul>
-        </div>
-        
-        <div class="rounded-[20px] border border-line bg-white p-6 shadow-sm">
-          <h3 class="mb-4 font-display text-[22px] font-bold tracking-tight">2. Onboarding</h3>
-          <ul class="flex flex-col gap-1.5">
-            <li><a href="./pages/onboarding-1.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Passo 1 (Objetivo)<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/onboarding-2.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Passo 2 (Idade)<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/onboarding-3.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Passo 3 (Patrimônio)<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/onboarding-4.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Passo 4 (Aporte)<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/onboarding-5.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Passo 5 (Rendimento)<span class="text-mut" aria-hidden="true">›</span></a></li>
-          </ul>
-        </div>
-        
-        <div class="rounded-[20px] border border-line bg-white p-6 shadow-sm">
-          <h3 class="mb-4 font-display text-[22px] font-bold tracking-tight">3. O Seu Plano</h3>
-          <ul class="flex flex-col gap-1.5">
-            <li><a href="./pages/dashboard.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Dashboard Principal<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/simulador.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Simulador<span class="text-mut" aria-hidden="true">›</span></a></li>
-            <li><a href="./pages/metas.html" class="flex items-center justify-between rounded-lg px-3 py-2.5 text-[16px] font-medium text-ink hover:bg-sea-soft hover:text-sea transition-colors">Metas<span class="text-mut" aria-hidden="true">›</span></a></li>
-          </ul>
-        </div>
+    <!-- Chamada final -->
+    <section class="py-24 text-center">
+      <h2 class="font-display text-3xl font-bold tracking-[-0.025em] md:text-[52px]">Pronto para traçar o seu horizonte?</h2>
+      <p class="mb-8 mt-2.5 text-[19px] text-mut">Entre com sua conta ou crie uma nova em poucos minutos.</p>
+      <div class="flex flex-wrap justify-center gap-3.5">
+        <a href="./pages/onboarding.html" class="inline-flex items-center justify-center gap-2 rounded-full border-[1.5px] border-sea-dark bg-sea-dark text-white hover:border-sea hover:bg-sea font-bold transition-colors px-8 py-4 text-[17px]">Começar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </section>
 
   </main>
   
-  <footer class="border-t border-line bg-white px-6 py-9 text-center text-sm text-mut mt-12">
+  <footer class="border-t border-line bg-white px-6 py-9 text-center text-sm text-mut">
     <p>© 2026 Horizonte. Todos os direitos reservados.</p>
     <p class="mt-1.5">As simulações são estimativas baseadas nos dados informados e não são recomendação de investimento.</p>
   </footer>
+
 </div>
 </body>
 </html>

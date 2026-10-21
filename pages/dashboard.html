@@ -32,25 +32,26 @@
       <a href="./metas.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Metas</a>
     </nav>
     <div class="flex items-center gap-2.5 text-base">
-      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">M</span>
-      <span>Marina</span>
+      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">U</span>
+      <span>Usuário</span>
       <a href="../index.html" class="text-sea font-bold text-sm ml-4 underline underline-offset-2">Sair</a>
     </div>
   </header>
 
   <main class="p-14 max-w-[1440px] mx-auto w-full flex-1 flex flex-col gap-6">
+
     <div class="flex justify-between items-end">
       <div>
-        <h1 class="font-display text-[40px] tracking-[-0.02em]">Olá, Marina</h1>
-        <p class="text-mut text-[17px] mt-1">Você está a 31 anos da independência financeira.</p>
+        <h1 class="font-display text-[40px] tracking-[-0.02em]">Olá, Usuário</h1>
+        <p class="text-mut text-[17px] mt-1">Você está a <span id="anos-restantes">31</span> anos da independência financeira.</p>      
       </div>
     </div>
 
     <div class="grid grid-cols-4 bg-white border border-line rounded-xl overflow-hidden my-2">
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Patrimônio atual</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 8.000</b></div>
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Aporte mensal</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 1.200</b></div>
-      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Meta de renda</span><b class="font-display text-[30px] tracking-[-0.02em]">R$ 5.000/mês</b></div>
-      <div class="p-6 flex flex-col"><span class="text-sm text-mut">Chegada prevista</span><b class="font-display text-[30px] tracking-[-0.02em]">dez/2057</b><small class="text-mut text-xs">aos 53 anos</small></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Patrimônio atual</span><b id="indicador-patrimonio" class="font-display text-[30px] tracking-[-0.02em]">R$ 8.000</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Aporte mensal</span><b id="indicador-aporte" class="font-display text-[30px] tracking-[-0.02em]">R$ 1.200</b></div>
+      <div class="p-6 border-r border-line flex flex-col"><span class="text-sm text-mut">Meta de renda</span><b id="indicador-meta" class="font-display text-[30px] tracking-[-0.02em]">R$ 5.000/mês</b></div>
+      <div class="p-6 flex flex-col"><span class="text-sm text-mut">Chegada prevista</span><b id="indicador-chegada" class="font-display text-[30px] tracking-[-0.02em]">dez/2057</b><small id="indicador-idade" class="text-mut text-xs">aos 53 anos</small></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-6 items-start">
@@ -61,27 +62,18 @@
         </div>
         <a href="./simulador.html" class="text-sea font-bold text-sm underline underline-offset-2">Abrir no simulador</a>
       </div>
+      
       <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
         <h3 class="font-display text-[17px] font-bold">Próximas metas</h3>
-        <div>
-          <div class="flex justify-between text-[15px]"><b>Reserva de emergência</b><span class="text-mut text-sm">R$ 8.000 de R$ 15.000</span></div>
-          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:53%"></div></div>
-          <small class="text-mut">Previsão: abr/2027</small>
-        </div>
-        <div>
-          <div class="flex justify-between text-[15px]"><b>Primeiros R$ 50 mil</b><span class="text-mut text-sm">R$ 8.000 de R$ 50.000</span></div>
-          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:16%"></div></div>
-          <small class="text-mut">Previsão: jun/2029</small>
-        </div>
-        <div>
-          <div class="flex justify-between text-[15px]"><b>R$ 250 mil</b><span class="text-mut text-sm">R$ 8.000 de R$ 250.000</span></div>
-          <div class="h-2 bg-seas rounded-full my-2"><div class="h-full bg-sea rounded-full" style="width:3%"></div></div>
-          <small class="text-mut">Previsão: set/2038</small>
-        </div>
+        
+        <div id="container-proximas-metas" class="flex flex-col gap-5"></div>
         <a href="./metas.html" class="text-sea font-bold text-sm underline underline-offset-2">Ver todas as metas</a>
       </div>
+      
     </div>
   </main>
   <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
+
+  <script type="module" src="../src/pages/dashboard.js"></script>
 </body>
 </html>
