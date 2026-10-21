@@ -6,13 +6,13 @@ const plano = carregarPlano();
 const projecao = calcularPlanoCompleto(plano);
 const patrimonio = projecao.patrimonio5Anos;
 const patrimonioMeta = projecao.patrimonioMeta;
-const limiteAnos = projecao.anosAteMeta + 15;
+const limiteAnos = (projecao.anosAteMeta ?? 30) + 15;
 
-const labels = patrimonio.map((v, i) => i === 0 ? 'Hoje' : `${i} anos`);
+const metaAtingida = patrimonioMeta === null ? null : patrimonio.find(elemento => elemento >= patrimonioMeta);
 
-const metaAtingida = patrimonio.find(elemento => elemento >= patrimonioMeta);
-const metaFixa = patrimonio.map((v, i) => ({ x: i, y: patrimonioMeta })).filter(ponto => ponto.x <= limiteAnos);
-
+const metaFixa = patrimonioMeta === null ? [] : patrimonio
+.map((v, i) => ({ x: i, y: patrimonioMeta }))
+.filter(ponto => ponto.x <= limiteAnos);
 
 const ctx = document.querySelector('canvas');
 console.log(ctx);
@@ -42,7 +42,7 @@ new Chart(ctx, {
                 const valor = context.dataset.data[i];
 
                 if (!valor) return 0;
-                
+
                 return valor.y === metaAtingida ? 8 : 0;
             }
         },
@@ -66,7 +66,7 @@ new Chart(ctx, {
                 },
                 type: 'linear',
                 min: 0,
-                max: limiteAnos,
+                max: Math.floor(limiteAnos / 5) * 5,
                 ticks: {
                     stepSize: 5,
                     callback: v => v === 0 ? 'Hoje' : `${v} anos`

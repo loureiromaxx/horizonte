@@ -1,3 +1,7 @@
+import { calcularPlanoCompleto } from "../lib/calculos";
+import { formatarMoeda } from "../lib/formatadores";
+import { carregarPlano, salvarPlano } from "../lib/plano-storage.js";
+
 function salvarDados(dados, plano) {
     
     const erros = validarDados(dados);
@@ -7,12 +11,15 @@ function salvarDados(dados, plano) {
         return;
     }
 
-    plano.idade = Number(dados.idadeInput.value);
-    plano.patrimonio = Number(dados.patrimonioInput.value);
-    plano.renda = Number(dados.rendaInput.value);
-    plano.inflacao = Number(dados.inflacaoInput.value);
+    const planoAtualizado = {
+        ...plano,
+        idade: Number(dados.idadeInput.value),
+        patrimonio: Number(dados.patrimonioInput.value),
+        renda: Number(dados.rendaInput.value),
+        inflacao: Number(dados.inflacaoInput.value)
+    };
 
-    localStorage.setItem('horizonte:plano', JSON.stringify(plano));
+    salvarPlano(planoAtualizado);
     location.reload();
 }
 
@@ -105,25 +112,41 @@ function exibirMsgErro(erros, dados) {
 }
 
 function carregarDados(dados) {
-    const plano = JSON.parse(localStorage.getItem('horizonte:plano'));
-    
-    if (!plano) return {};
-    
+    const plano = carregarPlano();
+    const projecao = calcularPlanoCompleto(plano);
+
     dados.idadeInput.value = plano.idade;
     dados.patrimonioInput.value = plano.patrimonio;
     dados.rendaInput.value = plano.renda;
     dados.inflacaoInput.value = plano.inflacao;
 
+    dados.aporteMensal.innerText = `Plano atual (${formatarMoeda(plano.aporte)} por mês)`;
+
+    dados.projecaoIdade.textContent = projecao.idadeNaMeta === null ? "Meta não atingida" : `${projecao.idadeNaMeta} anos`;
+
+    dados.projecaoMes.textContent = projecao.anoChegada === null ? "—" : `${projecao.mesDoAno}/${projecao.anoChegada}`;
+
+    dados.projecaoAnos.textContent = `Patrimônio em ${projecao.anosAteMeta ?? "—"} anos`;
+
+    dados.projecaoPatrimonio.textContent = projecao.idadeNaMeta === null || projecao.patrimonioMeta === null ? "—" : formatarMoeda(projecao.patrimonioMeta);
+
+    dados.projecaoAportes.textContent = projecao.totalAportado === null ? "—" : formatarMoeda(projecao.totalAportado);
+
     return plano;
 }
 
-// Programa principal
 
 const dados = {
         idadeInput: document.querySelector('#idade'),
         patrimonioInput: document.querySelector('#patrimonio-atual'),
         rendaInput: document.querySelector('#renda-mensal'),
-        inflacaoInput: document.querySelector('#inflacao')
+        inflacaoInput: document.querySelector('#inflacao'),
+        aporteMensal: document.querySelector('#aporte-mensal'),
+        projecaoIdade: document.querySelector('#idade-projecao'),
+        projecaoMes: document.querySelector('#mes-projecao'),
+        projecaoAnos: document.querySelector('#anos-projecao'),
+        projecaoPatrimonio: document.querySelector('#patrimonio-projecao'),
+        projecaoAportes: document.querySelector('#aportes-projecao')
     }
 
 let plano = carregarDados(dados);

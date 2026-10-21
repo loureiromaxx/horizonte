@@ -12,15 +12,17 @@ console.log("Metas carregadas: ", metas);
 function renderizarIndicadores(dados) {
   const calculos = calcularPlanoCompleto(dados);
 
-  const anoChegada = calculos.anoChegada ?? dados.anoChegada ?? 2057;
-  const idadeChegada = calculos.idadeNaMeta ?? dados.idadeChegada ?? 53;
-  const anosRestantes = calculos.anosAteMeta ?? 31;
+  const dataChegada = calculos.anoChegada === null
+    ? "—"
+    : `${calculos.mesDoAno}/${calculos.anoChegada}`;
+  const idadeChegada = calculos.idadeNaMeta === null ? "—" : `aos ${calculos.idadeNaMeta} anos`;
+  const anosRestantes = calculos.anosAteMeta ?? "—";
 
   document.getElementById("indicador-patrimonio").textContent = formatarMoeda(dados.patrimonio);
   document.getElementById("indicador-aporte").textContent = formatarMoeda(dados.aporte);
   document.getElementById("indicador-meta").textContent = `${formatarMoeda(dados.renda)}/mês`;
-  document.getElementById("indicador-chegada").textContent = `dez/${anoChegada}`;
-  document.getElementById("indicador-idade").textContent = `aos ${idadeChegada} anos`;
+  document.getElementById("indicador-chegada").textContent = dataChegada;
+  document.getElementById("indicador-idade").textContent = idadeChegada;
 
   const Anos = document.getElementById("anos-restantes");
   if (Anos) {
