@@ -102,7 +102,7 @@ new Chart(ctx, {
             tooltip: {
                 callbacks: {
                     label: context => {
-                        const valor = context.raw;
+                        const valor = context.raw.y;
                         return `Patrimônio: ${valor.toLocaleString('pt-BR', {
                             style: 'currency',
                             currency: 'BRL'
