@@ -22,31 +22,31 @@
   <script type="module" src="../src/lib/grafico.js"></script>
 </head>
 <body class="bg-paper font-sans text-ink min-h-screen flex flex-col">
-  <header class="flex items-center gap-12 px-14 h-[76px] bg-white border-b border-line sticky top-0 z-40">
-    <a href="../index.html" class="inline-flex items-center gap-2.5 no-underline">
+  <header class="sticky top-0 z-40 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-line bg-white px-4 py-3 sm:px-6 lg:flex-nowrap lg:gap-12 lg:px-14 lg:py-0">
+    <a href="../index.html" class="inline-flex min-w-0 items-center gap-2.5 no-underline">
       <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#133F55"/><path d="M5 17.5h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M8.5 17.5a5.5 5.5 0 0 1 11 0" fill="#F0A33B"/></svg>
       <span class="font-display text-[22px] font-bold tracking-tight">Horizonte</span>
     </a>
-    <nav class="flex gap-1.5 flex-1">
-      <a href="./dashboard.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Dashboard</a>
-      <a href="./simulador.html" class="px-3.5 pt-6 pb-5 text-base font-bold text-ink border-b-[3px] border-sun">Simulador</a>
-      <a href="./metas.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Metas</a>
+    <nav class="order-last flex basis-full justify-between gap-1.5 lg:order-none lg:flex-1">
+      <a href="./dashboard.html" class="border-b-[3px] border-transparent px-2 py-2 text-sm text-mut hover:text-ink sm:px-3.5 sm:text-base lg:pb-5 lg:pt-6">Dashboard</a>
+      <a href="./simulador.html" class="border-b-[3px] border-sun px-2 py-2 text-sm font-bold text-ink sm:px-3.5 sm:text-base lg:pb-5 lg:pt-6">Simulador</a>
+      <a href="./metas.html" class="border-b-[3px] border-transparent px-2 py-2 text-sm text-mut hover:text-ink sm:px-3.5 sm:text-base lg:pb-5 lg:pt-6">Metas</a>
     </nav>
-    <div class="flex items-center gap-2.5 text-base">
+    <div class="ml-auto flex shrink-0 items-center gap-2.5 text-sm sm:text-base">
       <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">U</span>
       <span>Usuário</span>
       <a href="../index.html" class="text-sea font-bold text-sm ml-4 underline underline-offset-2">Sair</a>
     </div>
   </header>
 
-  <main class="p-14 max-w-[1440px] mx-auto w-full flex-1 flex flex-col gap-6">
+  <main class="mx-auto flex w-full max-w-[1440px] flex-1 flex-col gap-6 p-4 sm:p-6 lg:p-14">
     <div>
-      <h1 class="font-display text-[40px] tracking-[-0.02em]">Simulador</h1>
+      <h1 class="font-display text-3xl tracking-[-0.02em] sm:text-[40px]">Simulador</h1>
       <p class="text-mut text-[17px] mt-1">Mexa nos valores e veja o resultado mudar na hora.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 items-start">
-      <form novalidate class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+    <div class="grid min-w-0 grid-cols-1 items-start gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
+      <form novalidate class="flex min-w-0 flex-col gap-5 rounded-xl border border-line bg-white p-5 sm:p-7">
         <h3 class="font-display text-[17px] font-bold">Seu plano</h3>
         <label for="idade" class="flex flex-col gap-1.5 text-sm font-bold">
           <span>Idade</span>
@@ -68,9 +68,9 @@
         <button type="submit" class="block bg-sea-dark text-white rounded-full py-3.5 text-center font-bold hover:bg-sea transition-colors">Atualizar meu plano</button>
       </form>
 
-      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+      <div class="flex min-w-0 flex-col gap-5 rounded-xl border border-line bg-white p-5 sm:p-7">
         <h3 class="font-display text-[17px] font-bold text-center">Evolução do patrimônio (valores de hoje)</h3>
-        <div class="relative h-72 w-full mx-auto">
+        <div class="relative mx-auto h-64 w-full min-w-0 sm:h-72">
           <canvas></canvas>
         </div>
         <div class="flex justify-center gap-6 text-sm text-mut">
@@ -80,15 +80,15 @@
           </span>
         </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-line pt-5 mt-2 text-center">
+      <div class="mt-2 grid grid-cols-1 gap-6 border-t border-line pt-5 text-center sm:grid-cols-2 xl:grid-cols-3">
         <div>
           <span class="mb-1 block text-sm text-mut">Com o plano atual você chega em</span><strong id="idade-projecao" class="break-words font-display text-2xl sm:text-[26px]">31 anos</strong><small id="data-projecao" class="mt-0.5 block text-xs text-mut">dez/2057</small>
         </div>
         <div>
-          <span id="anos-projecao" class="text-sm text-mut block mb-1">Patrimônio em 30 anos</span><strong id="patrimonio-projecao" class="font-display text-[26px]">R$ 1.062.297</strong>
+          <span id="anos-projecao" class="mb-1 block text-sm text-mut">Patrimônio em 30 anos</span><strong id="patrimonio-projecao" class="break-words font-display text-2xl sm:text-[26px]">R$ 1.062.297</strong>
         </div>
-        <div>
-          <span class="text-sm text-mut block mb-1">Aportes até a meta</span><strong id="aportes-projecao" class="font-display text-[26px]">R$ 448.800</strong>
+        <div class="sm:col-span-2 xl:col-span-1">
+          <span class="mb-1 block text-sm text-mut">Aportes até a meta</span><strong id="aportes-projecao" class="break-words font-display text-2xl sm:text-[26px]">R$ 448.800</strong>
         </div>
       </div>
     </div>
