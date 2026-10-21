@@ -1,8 +1,44 @@
 import { listarMetas } from "../lib/metas-storage.js";
+import { calcularPlanoCompleto } from "../lib/calculos.js";
+import { formatarMoeda } from "../lib/formatadores.js";
+import { carregarPlano } from "../lib/plano-storage.js";
 
-document.addEventListener('DOMContentLoaded', renderizarMetas);
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarMetaIndependencia();
+    renderizarMetas();
+});
 
 window.addEventListener("metas:atualizadas", renderizarMetas);
+
+function renderizarMetaIndependencia() {
+    const data = document.getElementById("meta-independencia-data");
+    const progresso = document.getElementById("meta-independencia-progresso");
+    const valores = document.getElementById("meta-independencia-valores");
+    const percentual = document.getElementById("meta-independencia-percentual");
+    const descricao = document.getElementById("descricao-meta-independencia");
+
+    if (!data || !progresso || !valores || !percentual || !descricao) return;
+
+    const plano = carregarPlano();
+    const calculos = calcularPlanoCompleto(plano);
+
+    if (calculos.patrimonioMeta === null || calculos.anoChegada === null) {
+        data.textContent = "Meta não atingida";
+        valores.textContent = `${formatarMoeda(plano.patrimonio)} de —`;
+        percentual.textContent = "—";
+        progresso.style.width = "0%";
+        descricao.textContent = "Marcos do plano e as metas que você criar.";
+        return;
+    }
+
+    const porcentagem = Math.min(100, Math.round((plano.patrimonio / calculos.patrimonioMeta) * 100));
+
+    data.textContent = `${calculos.mesDoAno}/${calculos.anoChegada}`;
+    valores.textContent = `${formatarMoeda(plano.patrimonio)} de ${formatarMoeda(calculos.patrimonioMeta)}`;
+    percentual.textContent = `${porcentagem}% concluído`;
+    progresso.style.width = `${porcentagem}%`;
+    descricao.textContent = `Marcos no caminho até ${formatarMoeda(calculos.patrimonioMeta)} e as metas que você criar.`;
+}
 
 export function renderizarMetas() {
     const container = document.getElementById('lista-metas');
