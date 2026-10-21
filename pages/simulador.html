@@ -18,6 +18,8 @@
       }
     }
   </script>
+  <script type="module" src="../src/pages/simulador.js"></script>
+  <script type="module" src="../src/lib/grafico.js"></script>
 </head>
 <body class="bg-paper font-sans text-ink min-h-screen flex flex-col">
   <header class="flex items-center gap-12 px-14 h-[76px] bg-white border-b border-line sticky top-0 z-40">
@@ -31,8 +33,8 @@
       <a href="./metas.html" class="px-3.5 pt-6 pb-5 text-base text-mut border-b-[3px] border-transparent hover:text-ink">Metas</a>
     </nav>
     <div class="flex items-center gap-2.5 text-base">
-      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">M</span>
-      <span>Marina</span>
+      <span class="w-[34px] h-[34px] rounded-full bg-sea text-white flex items-center justify-center font-bold text-sm">U</span>
+      <span>Usuário</span>
       <a href="../index.html" class="text-sea font-bold text-sm ml-4 underline underline-offset-2">Sair</a>
     </div>
   </header>
@@ -44,29 +46,53 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 items-start">
-      <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
+      <form novalidate class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
         <h3 class="font-display text-[17px] font-bold">Seu plano</h3>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Idade</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">22 anos</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Patrimônio atual</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 8.000</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Renda mensal desejada</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">R$ 5.000</div></label>
-        <label class="flex flex-col gap-1.5 text-sm font-bold"><span>Inflação esperada (ao ano)</span><div class="bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal">4,5%</div><small class="text-mut font-normal text-xs">Usamos esse valor para mostrar tudo em valores de hoje.</small></label>
-        <a href="./dashboard.html" class="block bg-sea-dark text-white rounded-full py-3.5 text-center font-bold hover:bg-sea transition-colors">Atualizar meu plano</a>
-      </div>
+        <label for="idade" class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Idade</span>
+          <input id="idade" name="idade" type="number" min="16" max="120" step="1" value="20" required class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal focus:outline-none focus:border-sea">
+        </label>
+        <label for="patrimonio-atual" class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Patrimônio atual (R$)</span>
+          <input id="patrimonio-atual" name="patrimonio-atual" type="number" min="0" step="0.01" value="8000" required class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal focus:outline-none focus:border-sea">
+        </label>
+        <label for="renda-mensal" class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Renda mensal desejada (R$)</span>
+          <input id="renda-mensal" name="renda-mensal" type="number" min="0" step="0.01" value="5000" required class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal focus:outline-none focus:border-sea">
+        </label>
+        <label for="inflacao" class="flex flex-col gap-1.5 text-sm font-bold">
+          <span>Inflação esperada ao ano (%)</span>
+          <input id="inflacao" name="inflacao" type="number" step="0.1" value="4.5" required class="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-paper border-[1.5px] border-line rounded-lg p-3 text-base font-normal focus:outline-none focus:border-sea">
+          <small class="text-mut font-normal text-xs">Usamos esse valor para mostrar tudo em valores de hoje.</small>
+        </label>
+        <button type="submit" class="block bg-sea-dark text-white rounded-full py-3.5 text-center font-bold hover:bg-sea transition-colors">Atualizar meu plano</button>
+      </form>
 
       <div class="bg-white border border-line rounded-xl p-7 flex flex-col gap-5">
-        <h3 class="font-display text-[17px] font-bold">Evolução do patrimônio (valores de hoje)</h3>
-        <svg class="w-full h-auto" viewBox="0 0 780 340" width="780" height="340" xmlns="http://www.w3.org/2000/svg"><line x1="76" x2="750" y1="308.0" y2="308.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="312.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 0</text><line x1="76" x2="750" y1="235.0" y2="235.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="239.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 500 mil</text><line x1="76" x2="750" y1="162.0" y2="162.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="166.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1 mi</text><line x1="76" x2="750" y1="89.0" y2="89.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="93.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 1,5 mi</text><line x1="76" x2="750" y1="16.0" y2="16.0" stroke="#D6DFE3" stroke-width="1"/><text x="66" y="20.0" text-anchor="end" font-size="11" fill="#5B6E77">R$ 2 mi</text><text x="76.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">Hoje</text><text x="150.9" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">5 anos</text><text x="225.8" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">10 anos</text><text x="300.7" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">15 anos</text><text x="375.6" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">20 anos</text><text x="450.4" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">25 anos</text><text x="525.3" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">30 anos</text><text x="600.2" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">35 anos</text><text x="675.1" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">40 anos</text><text x="750.0" y="332" text-anchor="middle" font-size="11" fill="#5B6E77">45 anos</text><line x1="76" x2="750" y1="141.6" y2="141.6" stroke="#F0A33B" stroke-width="2" stroke-dasharray="7 5"/><text x="84" y="133.6" font-size="12" font-weight="700" fill="#B87410">Meta: R$ 1,14 mi</text><clipPath id="c6"><rect x="76" y="16" width="674" height="292"/></clipPath><g clip-path="url(#c6)"><path d="M 76.0 306.8 L 91.0 304.6 L 106.0 302.3 L 120.9 299.8 L 135.9 297.3 L 150.9 294.5 L 165.9 291.7 L 180.8 288.7 L 195.8 285.5 L 210.8 282.2 L 225.8 278.6 L 240.8 274.9 L 255.7 271.0 L 270.7 267.0 L 285.7 262.6 L 300.7 258.1 L 315.6 253.3 L 330.6 248.3 L 345.6 243.0 L 360.6 237.4 L 375.6 231.6 L 390.5 225.4 L 405.5 218.9 L 420.5 212.0 L 435.5 204.8 L 450.4 197.2 L 465.4 189.3 L 480.4 180.9 L 495.4 172.0 L 510.4 162.7 L 525.3 152.9 L 540.3 142.6 L 555.3 131.7 L 570.3 120.3 L 585.2 108.3 L 600.2 95.6 L 615.2 82.3 L 630.2 68.2 L 645.2 53.5 L 660.1 37.9 L 675.1 21.6 L 690.1 4.3 L 705.1 -13.8 L 720.0 -32.9 L 735.0 -53.0 L 750.0 -74.2" fill="none" stroke="#1D5B78" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="542.8" cy="141.6" r="15" fill="#F0A33B" fill-opacity="0.25"/><circle cx="542.8" cy="141.6" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/><path d="M 76.0 306.8 L 91.0 303.5 L 106.0 300.0 L 120.9 296.3 L 135.9 292.4 L 150.9 288.3 L 165.9 284.0 L 180.8 279.4 L 195.8 274.6 L 210.8 269.6 L 225.8 264.3 L 240.8 258.7 L 255.7 252.9 L 270.7 246.7 L 285.7 240.2 L 300.7 233.3 L 315.6 226.1 L 330.6 218.5 L 345.6 210.6 L 360.6 202.1 L 375.6 193.3 L 390.5 184.0 L 405.5 174.2 L 420.5 163.9 L 435.5 153.0 L 450.4 141.6 L 465.4 129.5 L 480.4 116.9 L 495.4 103.5 L 510.4 89.5 L 525.3 74.7 L 540.3 59.1 L 555.3 42.8 L 570.3 25.5 L 585.2 7.4 L 600.2 -11.7 L 615.2 -31.8 L 630.2 -53.0 L 645.2 -75.3 L 660.1 -98.7 L 675.1 -123.4 L 690.1 -149.4 L 705.1 -176.7 L 720.0 -205.5 L 735.0 -235.8 L 750.0 -267.7" fill="none" stroke="#2B8A68" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/><circle cx="450.4" cy="141.6" r="15" fill="#F0A33B" fill-opacity="0.25"/><circle cx="450.4" cy="141.6" r="8" fill="#F0A33B" stroke="#fff" stroke-width="2.5"/></g></svg>
-        <div class="flex gap-6 text-sm text-mut">
-          <span><i class="inline-block w-3.5 h-1 rounded mr-2 align-middle bg-[#1D5B78]"></i>Plano atual (R$ 1.200 por mês)</span>
-          <span><i class="inline-block w-3.5 h-1 rounded mr-2 align-middle bg-[#2B8A68]"></i>Para chegar em 25 anos (R$ 1.827 por mês)</span>
+        <h3 class="font-display text-[17px] font-bold text-center">Evolução do patrimônio (valores de hoje)</h3>
+        <div class="relative h-72 w-full mx-auto">
+          <canvas></canvas>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-line pt-5 mt-2">
-          <div><span class="text-sm text-mut block mb-1">Com o plano atual você chega em</span><b class="font-display text-[26px]">31 anos</b><small class="block text-mut text-xs mt-0.5">dez/2057</small></div>
-          <div><span class="text-sm text-mut block mb-1">Patrimônio em 30 anos</span><b class="font-display text-[26px]">R$ 1.062.297</b></div>
-          <div><span class="text-sm text-mut block mb-1">Aportes até a meta</span><b class="font-display text-[26px]">R$ 448.800</b></div>
+        <div class="flex justify-center gap-6 text-sm text-mut">
+          <span>
+              <i class="inline-block w-3.5 h-1 rounded mr-2 align-middle bg-[#1D5B78]"></i>
+              <span id="aporte-mensal">Plano atual (R$ 1.200 por mês)</span>
+          </span>
+        </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-line pt-5 mt-2 text-center">
+        <div>
+          <span class="text-sm text-mut block mb-1">Com o plano atual você chega em</span><strong id="idade-projecao" class="font-display text-[26px]">31 anos</strong><small id="mes-projecao" class="block text-mut text-xs mt-0.5">dez/2057</small>
+        </div>
+        <div>
+          <span id="anos-projecao" class="text-sm text-mut block mb-1">Patrimônio em 30 anos</span><strong id="patrimonio-projecao" class="font-display text-[26px]">R$ 1.062.297</strong>
+        </div>
+        <div>
+          <span class="text-sm text-mut block mb-1">Aportes até a meta</span><strong id="aportes-projecao" class="font-display text-[26px]">R$ 448.800</strong>
         </div>
       </div>
     </div>
+  </div>
   </main>
   <footer class="text-center py-6 text-xs text-mut bg-white border-t border-line">Resultados são estimativas e dependem do rendimento e da inflação informados. Não é recomendação de investimento.</footer>
 </body>
