@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* Cores */
   --color-paper: #F2F5F6;
   --color-paper-dark: #F6F8F9;
   --color-ink: #13242C;
@@ -15,6 +16,7 @@
   --color-suns: #FDF1DC;
   --color-sun-dark: #B87410;
 
-  --font-sans: 'DM Sans', sans-serif;
-  --font-display: 'Bricolage Grotesque', sans-serif;
+  /* Tipografia */
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-display: var(--font-bricolage), sans-serif;
 }

@@ -1,57 +1,36 @@
-# Horizonte - Simulador de Independência Financeira
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> Sistema Web que transforma a meta de viver de renda num plano visual e acompanhável, calculando prazos, aportes mensais e evolução patrimonial.
+## Getting Started
 
-## Ideia, Objetivo Principal & Público-Alvo
-- **Ideia & Objetivo:** Transformar uma meta de vida (como receber um determinado valor mensal de renda) num plano visual, indicando a data de alcance e o valor mensal necessário para guardar, em vez de apresentar apenas um número isolado.
-- **Público-Alvo:** Jovens e estudantes universitários que estão começando a investir e desejam compreender o próprio plano financeiro sem muitos termos técnicos.
-- **Problema:** As pessoas acabam recorrendo a planilhas manuais ou calculadoras que fornecem um valor solto, sem mostrar o caminho prático até a meta.
-- **Solução & Valor:** Uma interface web simples e intuitiva onde o usuário introduz poucos dados e visualiza a evolução num gráfico em tempo real, acompanhando marcos do plano e suas metas próprias.
+First, run the development server:
 
-## Benchmarking (Análise Comparativa)
-| Ferramenta | Pontos Fortes | Limitações | Diferencial da Solução |
-| ---------- | ------------- | ---------- | ---------------------- |
-| Simulador Viver de Renda | Considera a inflação e período de consumo | Apenas apresenta um texto final sem metas intermediárias | Gráficos visuais e definição do ano de chegada e valor mensal a guardar |
-| AmortizaPro | Usa a regra dos 4% de retirada segura | Foco exclusivo no patrimônio total e tempo de chegada, sem metas | Acompanha as metas próprias com prazos definidos |
-| Kinvo / Status Invest | Análise profunda de ativos e acompanhamento de carteira | Voltado para quem já investe; complexo para iniciantes | Simplicidade, foco no usuário iniciante e na projeção do plano |
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Equipe
-- **Ana Beatriz Paulino** - 20252380022 | [GitHub](https://github.com/anabeatriz353)
-- **João Neto** - 202614320006 | [GitHub](https://github.com/joaoneto1404)
-- **Jonathan Nascimento** - 20252380004 | [GitHub](https://github.com/johnlcsz)
-- **Luis Guimaraes** - 202614320002 | [GitHub](https://github.com/luis2346)
-- **Max Loureiro** - 202614320022 | [GitHub](https://github.com/loureiromaxx)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Documentação & Recursos
-- **Pitch / Apresentação:** [Google Slides](https://docs.google.com/presentation/d/1-YdgnxVtgF_t_3ORMciu-RFWWeUfjPpQU3EvwJkvByY/edit?usp=sharing)
-- **Protótipos / Design:** [Figma](https://www.figma.com/design/dU7gBU8CStjYauZyXW1dEI/Horizonte?m=auto&t=4yZOlAWsw8TYz8TP-6)
-- **Workflow / Kanban:** [GitHub Projects](https://github.com/users/loureiromaxx/projects/1/views/1)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Páginas / Telas da Aplicação (GitHub Pages)
-- 🏠 **Página Inicial:** [https://loureiromaxx.github.io/horizonte/](https://loureiromaxx.github.io/horizonte/)
-- 🔑 **Autenticação (Login/Cadastro):** [https://loureiromaxx.github.io/horizonte/login.html](https://loureiromaxx.github.io/horizonte/login.html)
-- 🚀 **Onboarding:** [https://loureiromaxx.github.io/horizonte/onboarding-1.html](https://loureiromaxx.github.io/horizonte/onboarding-1.html)
-- 📊 **Dashboard:** [https://loureiromaxx.github.io/horizonte/dashboard.html](https://loureiromaxx.github.io/horizonte/dashboard.html)
-- 📈 **Simulador:** [https://loureiromaxx.github.io/horizonte/simulador.html](https://loureiromaxx.github.io/horizonte/simulador.html)
-- 🎯 **Metas:** [https://loureiromaxx.github.io/horizonte/metas.html](https://loureiromaxx.github.io/horizonte/metas.html)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Funcionalidades Planejadas (Features)
-- [x] Onboarding interativo de 5 passos, com uma pergunta por tela.
-- [x] Dashboard central com indicadores do plano, gráfico até a meta e próximas metas.
-- [x] Simulador interativo com controles de aporte, rendimento e prazo que alteram o gráfico em tempo real.
-- [x] Gestão de marcos do plano e criação de metas próprias (ex: Intercâmbio) com cálculo de aporte mensal.
-- [ ] Armazenamento local com JavaScript puro via LocalStorage ou API simulada (`json-server`).
-- [ ] Autenticação de usuários e implementação de banco de dados PostgreSQL via Supabase.
-- [ ] Interface desenvolvida com Next.js.
+## Learn More
 
-## Estratégia para Obtenção de Dados Reais (Hipóteses Técnicas)
+To learn more about Next.js, take a look at the following resources:
 
-**Fontes de Dados & Coleta:**
-- Informações fornecidas pelo usuário para a realização dos cálculos financeiros;
-- Cálculos financeiros realizados no próprio navegador utilizando JavaScript;
-- Inflação obtida futuramente pela API aberta do Banco Central, utilizando o IPCA.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-**Armazenamento & API:**
-- LocalStorage ou API simulada para guardar temporariamente os dados do usuário;
-- Banco de dados PostgreSQL através do Supabase para armazenar usuários, planos financeiros e metas;
-- Acesso seguro e individualizado aos dados salvos por cada pessoa.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
