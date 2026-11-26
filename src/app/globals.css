@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline{
   /* Cores */
   --color-paper: #F2F5F6;
   --color-paper-dark: #F6F8F9;

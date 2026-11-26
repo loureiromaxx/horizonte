@@ -21,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR">
       <body className={`${dmSans.variable} ${bricolage.variable}`}> 
-        {children} 
+        {children}
       </body>
     </html>
   );
